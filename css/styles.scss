@@ -1,0 +1,54 @@
+// Alt der gælder for mobil og højere
+
+* { // Gælder alt på hele siden
+  -webkit-box-sizing: border-box; // -webkit- browserunderstøttelse
+  box-sizing: border-box; // Bokse har altid den størrelse man giver uanset om der tilføjes margen mv.
+}
+
+body {
+  margin: 0; // Ingen kanter i siden af browser
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; // Ingen ydre margen fra overskrifter
+  padding: 0; // Ingen indre margen fra overskrifter
+}
+
+ul, ol {
+  margin: 0; // Ingen ydre margen fra lister
+  padding: 0; // Ingen indre margen fra lister
+  list-style-position: inside; // List punkter står på linje
+}
+
+li {
+  margin: 0; // Ingen ydre margen fra listpunkter
+}
+
+p {
+  margin: 0; // Ingen ydre margen fra paragraffer
+  padding: 0; // Ingen indre margen fra paragraffer
+}
+
+// Sikrer billeder er responsive
+img {
+  display: block; // Billeder er et element (laver linjeskift)
+  max-width: 100%; // Bredde må maks fylde 100%
+  height: auto; // Højden skal tilpasse sig
+}
+
+@media screen and (min-width: 768px) {
+  // Alt der ændres i tablet stående fra mobil
+}
+
+@media screen and (min-width: 992px) {
+  // Alt der ændres i tablet liggende fra mobil og tablet stående
+}
+
+@media screen and (min-width: 1200px) {
+  // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+}
+
+@media print {
+  // Alt der gælder for print specifikt
+}
