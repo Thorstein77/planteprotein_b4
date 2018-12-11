@@ -5,13 +5,14 @@
   box-sizing: border-box; // Bokse har altid den størrelse man giver uanset om der tilføjes margen mv.
 }
 
-$primærfarve: #0bd951;
-$moerkgrå: #3a3a3a
+$primaryColor: #0bd951;
+$fontColor: #000000;
+$fontColorOnGreen: #ffffff;
+$darkGray: #3a3a3a;
 
 body {
   margin: 0; // Ingen kanter i siden af browser
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0; // Ingen ydre margen fra overskrifter
@@ -38,6 +39,58 @@ img {
   display: block; // Billeder er et element (laver linjeskift)
   max-width: 100%; // Bredde må maks fylde 100%
   height: auto; // Højden skal tilpasse sig
+}
+
+a{
+  text-decoration: none;
+}
+
+footer{
+  background-color: $primaryColor;
+
+  .footerGradient{
+    height: 15vw;
+    background-image: linear-gradient(white, $primaryColor);
+  }
+
+  .footerContent{
+    width: 90%;
+    margin: 0 auto;
+    background-color: $primaryColor;
+    color: $fontColorOnGreen;
+
+    h2{
+      text-align: center;
+    }
+
+    a{
+      color: $fontColorOnGreen;
+    }
+
+    .flex{
+      display: flex;
+      justify-content: space-around;
+
+      font-size: 40px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template: auto auto auto auto auto / 45% 10% 45%;
+
+      #fGridItem1{
+        grid-area: 1 / 1 / 6 / 2;
+      }
+
+      #fGridItem2{
+        grid-area: 1 / 3 / 3 / 4;
+      }
+
+      #fGridItem3{
+        grid-area: 4 / 3 / 6 / 4;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
