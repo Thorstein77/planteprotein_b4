@@ -5,32 +5,32 @@
 
     <div class="footerContent">
         <div class="flex">
-            <a>
+            <a href="https://www.facebook.com/pg/PlanteProteinDK/posts/" target="_blank">
                 <i class="fab fa-facebook"></i>
             </a>
 
-            <a>
+            <a href="https://www.instagram.com/planteprotein/" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a>
+            <a href="https://www.pinterest.dk/" target="_blank">
                 <i class="fab fa-pinterest-square"></i>
             </a>
 
-            <a>
+            <a href="https://plus.google.com/" target="_blank">
                 <i class="fab fa-google-plus-square"></i>
             </a>
         </div>
 
-        <div>
+        <div class="fTrust">
             <h2>Trustpilot</h2>
 
-            <a>
-
+            <a href="https://dk.trustpilot.com/review/www.plante-protein.dk" target="_blank">
+                <img src="images/Trustpilot.png">
             </a>
         </div>
 
-        <div>
+        <div class="fContact">
             <h2>Kontakt</h2>
 
             <div class="grid">
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="fTerms">
             <a href="#">
                 Vilkår
             </a>
