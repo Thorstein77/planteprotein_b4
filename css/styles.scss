@@ -10,13 +10,23 @@ $fontColor: #000000;
 $fontColorOnGreen: #ffffff;
 $darkGray: #3a3a3a;
 
+@mixin fontHeadline{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+@mixin fontText{
+  font-family: 'Quicksand', sans-serif;
+}
+
 body {
   margin: 0; // Ingen kanter i siden af browser
+  @include fontText;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0; // Ingen ydre margen fra overskrifter
   padding: 0; // Ingen indre margen fra overskrifter
+  @include fontHeadline;
 }
 
 ul, ol {
@@ -61,34 +71,54 @@ footer{
 
     h2{
       text-align: center;
+      margin-bottom: 5vw;
     }
 
     a{
       color: $fontColorOnGreen;
     }
 
+    p{
+      font-size: 10pt;
+    }
+
     .flex{
       display: flex;
       justify-content: space-around;
-
+      margin: 10vw 0 0 0;
       font-size: 40px;
     }
 
-    .grid{
-      display: grid;
-      grid-template: auto auto auto auto auto / 45% 10% 45%;
+    .fTrust{
+      margin: 10vw auto 0 auto;
+      width: 85%;
 
-      #fGridItem1{
-        grid-area: 1 / 1 / 6 / 2;
-      }
+    }
 
-      #fGridItem2{
-        grid-area: 1 / 3 / 3 / 4;
-      }
+    .fContact{
+      margin: 10vw 0 0 0;
 
-      #fGridItem3{
-        grid-area: 4 / 3 / 6 / 4;
+      .grid{
+        display: grid;
+        grid-template: auto auto auto auto auto / 45% 10% 45%;
+
+        #fGridItem1{
+          grid-area: 1 / 1 / 6 / 2;
+        }
+
+        #fGridItem2{
+          grid-area: 1 / 3 / 3 / 4;
+        }
+
+        #fGridItem3{
+          grid-area: 4 / 3 / 6 / 4;
+        }
       }
+    }
+
+    .fTerms{
+      margin: 10vw 0 0 0;
+      padding-bottom: 10vw;
     }
   }
 }
@@ -99,10 +129,71 @@ footer{
 
 @media screen and (min-width: 992px) {
   // Alt der ændres i tablet liggende fra mobil og tablet stående
+
+  footer {
+    .footerGradient{
+      height: 100px;
+    }
+
+    .footerContent {
+      width: 96%;
+      display: grid;
+      grid-template: auto auto auto auto / 30% 5% 30% 5% 30%;
+
+      h2 {
+        margin: 0 0 15px 0;
+      }
+
+      .flex {
+        grid-area: 1 / 3 / 2 / 4;
+        margin: 0;
+      }
+
+      .fTrust {
+        grid-area: 3 / 3 / 4 / 4;
+        margin: 0 auto;
+        padding-bottom: 35px;
+      }
+
+      .fTerms {
+        grid-area: 2 / 1 / 3 / 2;
+        margin: 40px 0 0 0;
+        padding: 0;
+      }
+
+      .fContact {
+        grid-area: 2 / 5 / 4 / 6;
+        margin: 0;
+
+        .grid{
+          grid-template: auto auto auto auto auto / 40% 9% 51%;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+  footer {
+    .footerGradient{
+      height: 125px;
+    }
+
+    .footerContent {
+      width: 90%;
+
+      .fTerms {
+        margin: 50px 0 0 0;
+      }
+
+      .fContact {
+        .grid{
+          grid-template: auto auto auto auto auto / 45% 10% 45%;
+        }
+      }
+    }
+  }
 }
 
 @media print {
