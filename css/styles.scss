@@ -60,6 +60,36 @@ a{
 
   aside{
 
+    .grid{
+      display: grid;
+      grid-template: 40vw 40vw / 47.5% 5% 47.5%;
+      margin: 0 5%;
+
+      ul{
+        list-style-type: none;
+      }
+
+      h3{
+        @include fontText;
+        font-weight: 400;
+      }
+
+      #gridItem1{
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      #gridItem2{
+        grid-area: 1 / 3 / 2 / 4;
+      }
+
+      #gridItem3{
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      #gridItem4{
+        grid-area: 2 / 3 / 3 / 4;
+      }
+    }
   }
 }
 

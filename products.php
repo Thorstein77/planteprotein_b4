@@ -34,41 +34,96 @@ require ("php/header.php");
     <aside>
         <h2></h2>
 
-        <div>
-            <div>
-                <h3></h3>
+        <div class="grid">
+            <div id="gridItem1">
+                <h3>Type</h3>
 
                 <ul>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <input type="checkbox">
+                        Proteinpulver
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Proteinpulver
+                    </li>
                 </ul>
             </div>
 
-            <div>
-                <h3></h3>
+            <div id="gridItem2">
+                <h3>Smag</h3>
 
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <input type="checkbox">
+                        Vanilje
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Chokolade
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Neutral
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Bær
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Kokos
+                    </li>
                 </ul>
             </div>
 
-            <div>
-                <h3></h3>
+            <div id="gridItem3">
+                <h3>Mærke</h3>
 
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <input type="checkbox">
+                        Multipower
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        The Protein Works
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Scitech Nutrition
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        GymQueen
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Plantforce
+                    </li>
+                </ul>
+            </div>
+
+            <div id="gridItem4">
+                <h3>&#8205;</h3>
+
+                <ul>
+                    <li>
+                        <input type="checkbox">
+                        Rawfusion
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        SunWarrior
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Hej Neutral
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        Vega
+                    </li>
                 </ul>
             </div>
         </div>
@@ -76,8 +131,11 @@ require ("php/header.php");
 
     <section>
         <div>
-            <h2></h2>
-
+            <h2>
+                Vega Protein &
+                Greens proteinpulver
+            </h2>
+            
             <img>
 
             <div>
