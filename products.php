@@ -130,30 +130,45 @@ require ("php/header.php");
     </aside>
 
     <section>
-        <div>
+        <div class="product">
             <h2>
-                Vega Protein &
+                Vega Protein &<br>
                 Greens proteinpulver
             </h2>
             
-            <img>
+            <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
-            <div>
-                <h3></h3>
+            <div class="info">
+                <h3>Vanilje | Chokolade</h3>
 
-                <div>
-                    <div>
-                        <img>
-                        <img>
-                        <img>
-                        <img>
+                <div class="price">
+
+
+                    <div class="icons">
+                        <div class="iconImg">
+                            <img src="images/icons/gluten.png">
+                        </div>
+
+                        <div class="iconImg">
+                            <img src="images/icons/soy.png">
+                        </div>
+
+                        <div class="iconImg">
+                            <img src="images/icons/lactose.png">
+                        </div>
+
+                        <div class="iconImg">
+                            <img src="images/icons/organic.png">
+                        </div>
                     </div>
 
-                    <p>pris</p>
+                    <p>299,-</p>
                 </div>
             </div>
 
-            <button>Læg i kurv</button>
+            <div class="flex">
+                <button>Læg i kurv</button>
+            </div>
         </div>
     </section>
 </main>
