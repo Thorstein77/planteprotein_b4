@@ -211,7 +211,6 @@ require ("php/footer.php");
             if((objectBottomPosition >= windowTopPosition) &&
                 (objectTopPosition <= windowBottomPosition)){
                 $object.addClass('inView');
-                console.log('lalablah');
             }else{
                 $object.removeClass('inView');
             }
