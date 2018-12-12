@@ -217,9 +217,9 @@ require ("php/footer.php");
             }
         });
     }
-    
 
-    
+
+
 </script>
 
 </body>
