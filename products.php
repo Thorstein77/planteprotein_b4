@@ -131,45 +131,54 @@ require ("php/header.php");
 
     <section>
         <div class="product">
-            <h2>
-                Vega Protein &<br>
-                Greens proteinpulver
-            </h2>
-            
-            <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
-            <div class="info">
-                <h3>Vanilje | Chokolade</h3>
+            <a href="#">
+                <h2>
+                    Vega Protein &<br>
+                    Greens proteinpulver
+                </h2>
 
-                <div class="price">
+                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+
+                <div class="info">
+                    <h3>Vanilje | Chokolade</h3>
+
+                    <div class="price">
 
 
-                    <div class="icons">
-                        <div class="iconImg">
-                            <img src="images/icons/gluten.png">
+                        <div class="icons">
+                            <div class="iconImg">
+                                <img src="images/icons/gluten.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/soy.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/lactose.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/organic.png">
+                            </div>
                         </div>
 
-                        <div class="iconImg">
-                            <img src="images/icons/soy.png">
-                        </div>
-
-                        <div class="iconImg">
-                            <img src="images/icons/lactose.png">
-                        </div>
-
-                        <div class="iconImg">
-                            <img src="images/icons/organic.png">
-                        </div>
+                        <p>299,-</p>
                     </div>
-
-                    <p>299,-</p>
                 </div>
-            </div>
+            </a>
 
             <div class="flex">
                 <button>Læg i kurv</button>
             </div>
         </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 </main>
 
@@ -178,7 +187,40 @@ require ("php/footer.php");
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+
+    var $animateInfo = $('.info');
+    var $window = $(window);
+
+    $window.on('scroll resize', checkIfOnScreen);
+    $window.trigger('scroll');
+
+    function checkIfOnScreen(){
+        var windowHeight = $window.height();
+        var windowTopPosition = $window.scrollTop();
+        var windowBottomPosition = (windowTopPosition + windowHeight);
+
+        $.each($animateInfo, function () {
+
+            var $object = $(this);
+            var objectHeight = $object.outerHeight();
+            var objectTopPosition = $object.offset().top;
+            var objectBottomPosition = (objectTopPosition + objectHeight);
+
+            // check if object is in view
+            if((objectBottomPosition >= windowTopPosition) &&
+                (objectTopPosition <= windowBottomPosition)){
+                $object.addClass('inView');
+                console.log('lalablah');
+            }else{
+                $object.removeClass('inView');
+            }
+        });
+    }
+    
+
+    
+</script>
 
 </body>
 </html>

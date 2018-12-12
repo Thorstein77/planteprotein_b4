@@ -100,8 +100,13 @@ a{
         text-align: center;
       }
 
+      a{
+        text-decoration: none;
+        color: $fontColor;
+
+      }
+
       .info{
-        background-image: linear-gradient(white, $primaryColor);
 
         h3{
           padding: 5vw 0 0 0;
@@ -114,7 +119,7 @@ a{
           padding: 3vw 0;
 
           .icons{
-            display: flex;
+            display: none;
             justify-content: space-around;
             align-items: center;
             width: 50%;
@@ -126,10 +131,27 @@ a{
           }
 
           p{
-            font-size: 45px;
+            font-size: 35px;
             font-weight: bold;
+            color: $fontColor;
+          }
+        }
+      }
+
+      .inView {
+        background-image: linear-gradient(white, $primaryColor);
+
+        .price {
+
+          .icons {
+            display: flex;
+          }
+
+          p {
+            font-size: 45px;
             color: $fontColorOnGreen;
           }
+
         }
       }
 
