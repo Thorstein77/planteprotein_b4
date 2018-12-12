@@ -91,6 +91,87 @@ a{
       }
     }
   }
+
+  section{
+
+    .product{
+
+      h2, h3{
+        text-align: center;
+      }
+
+      a{
+        text-decoration: none;
+        color: $fontColor;
+
+      }
+
+      .info{
+
+        h3{
+          padding: 5vw 0 0 0;
+        }
+
+        .price{
+          display: flex;
+          justify-content: space-around;
+
+          padding: 3vw 0;
+
+          .icons{
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            overflow: hidden;
+
+            .iconImg{
+              width: 20%;
+            }
+          }
+
+          p{
+            font-size: 35px;
+            font-weight: bold;
+            color: $fontColor;
+          }
+        }
+      }
+
+      .inView {
+        background-image: linear-gradient(white, $primaryColor);
+
+        .price {
+
+          .icons {
+            display: flex;
+          }
+
+          p {
+            font-size: 45px;
+            color: $fontColorOnGreen;
+          }
+
+        }
+      }
+
+      .flex{
+        margin: 10vw 0;
+        display: flex;
+        justify-content: center;
+
+        button{
+          background-color: $primaryColor;
+          border: none;
+          border-radius: 40px;
+          color: $fontColorOnGreen;
+          font-size: 30px;
+          @include fontText;
+          padding: 5px 30px;
+        }
+      }
+    }
+  }
 }
 
 footer{
