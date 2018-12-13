@@ -45,6 +45,126 @@ a{
   text-decoration: none;
 }
 
+
+header{
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 30% auto 20%;
+
+.headerLogo{
+  z-index: 10;
+  display: grid;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  padding-top: 10px;
+  justify-items: end;
+  height: 7vw;
+
+  img{
+    width: 55%;
+  }
+}
+
+.headerMenuWeb{
+  display: none;
+}
+
+
+// DROP DOWN____________________________________________________
+
+/* Giving a background-color to the nav container. */
+nav {
+  z-index: 5;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+  background-color: $primaryColor;
+  padding-top: 5vw;
+
+
+img {
+  width: 40%;
+  height: auto;
+
+}
+
+p {
+  text-align: center;
+}
+
+hr {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.toggle, [id^=drop] {
+  display: none;
+}
+
+  /* Styling the toggle lable */
+  .toggle {
+    display: block;
+    text-decoration:none;
+    border:none;
+    width: 20%;
+    float: right;
+  }
+
+  .toggle:hover {
+    cursor: pointer;
+  }
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+ul {
+  padding:0;
+  margin: 15vw 0 0 0;
+  list-style: none;
+  position: relative;
+}
+
+/* Positioning the navigation items inline */
+ul li {
+  margin: 0;
+  display:inline-block;
+  width: 100%;
+}
+
+/* Styling the links */
+a {
+  display:block;
+  padding:14px 7vw;
+  color:#FFF;
+  font-size: 21pt;
+  text-decoration:none;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 25px;
+}
+
+.menuLogInd{
+  a {
+    padding: 14px 7vw 0 7vw;
+    line-height: 25px;
+  }
+}
+
+}
+
+.headerGradient {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 3;
+  background-image: linear-gradient($primaryColor, transparent);
+  height: 15vw;
+}
+
+}
+
 footer{
   background-color: $primaryColor;
 
@@ -95,10 +215,175 @@ footer{
 
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
+
 }
 
 @media screen and (min-width: 992px) {
   // Alt der ændres i tablet liggende fra mobil og tablet stående
+
+  //DROP DOWN____________________________________________________
+
+header {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 15% 30% auto;
+
+
+  .headerLogo{
+    z-index: 10;
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    padding-top: 10px;
+    justify-items: end;
+    height: auto;
+    background-color: $primaryColor;
+
+    img{
+      width: 45%;
+    }
+  }
+
+  nav {
+    margin: 0;
+    z-index: 5;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 2;
+    background-color: $primaryColor;
+    padding: 0 5% 0 40%;
+    display: grid;
+    align-content: end;
+
+  }
+
+  nav ul {
+    padding:0;
+    margin: 0;
+    position: relative;
+  }
+
+  nav a {
+    display: block;
+    padding: 0;
+    color:#FFF;
+    font-size: 14pt;
+    line-height: 18pt;
+    text-decoration: none;
+
+  }
+
+  nav .menu{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  nav .menuLogInd{
+    a {
+      padding: 0;
+      line-height: 18pt;
+    }
+  }
+
+  .menuHrLinje {
+    display: none;
+  }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  nav .toggle + a,
+  nav .menu {
+  }
+
+  /* Styling the toggle lable */
+  nav .toggle {
+    display: none;
+    text-decoration:none;
+    border:none;
+    width: 20%;
+    float: right;
+  }
+
+  nav .toggle:hover {
+    cursor: pointer;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: auto;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    font-weight: bold;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a{
+    padding:14px 20px;
+    color:#FFF;
+    font-size:17px;
+  }
+
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    display: block;
+    position:static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: block;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+
+  }
+
+  .headerGradient {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 3;
+    background-image: linear-gradient($primaryColor, transparent);
+    height: 5vw;
+  }
+
+}
+
+
+
 }
 
 @media screen and (min-width: 1200px) {
