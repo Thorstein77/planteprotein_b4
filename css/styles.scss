@@ -26,9 +26,61 @@ $darkGray: #3a3a3a;
   background-color: #e6e6e6;
 }
 
+@mixin buttonGreen {
+  cursor: pointer;
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 40px;
+  color: $fontColorOnGreen;
+  font-size: 18pt;
+  @include fontText;
+  padding: 5px 30px;
+}
+@mixin buttonGreenHover{
+  background-color: $primaryColor;
+  color: $darkGray;
+  transition: transform .2s;
+  transform: scale(1.1);
+}
+
+@mixin buttonWhite{
+  cursor: pointer;
+  background-color: $fontColorOnGreen;
+  border: none;
+  border-radius: 40px;
+  color: $darkGray;
+  font-size: 18pt;
+  @include fontText;
+  padding: 5px 30px;
+}
+@mixin buttonWhiteHover{
+  @include fontText;
+  color: $primaryColor;
+  transition: transform .2s;
+  transform: scale(1.1);
+}
+
+@mixin input{
+  font-size: 14pt;
+  padding: 6px 0 5px 10px;
+  border: 1px solid $darkGray;
+  border-radius: 12px;
+  background-color: #e3e3e3;
+
+}
+
 body {
   margin: 0; // Ingen kanter i siden af browser
   @include fontText;
+}
+
+h1{
+  @include fontHeadline;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 35pt;
+  color: $darkGray;
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -182,6 +234,130 @@ ul ul {
 }
 
 }
+
+//Index - Sabine (Start) ----------------------------------------
+.index {
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: $primaryColor;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      color: $darkGray;
+  }
+
+  .weOffer {
+    width: 100%;
+    margin-top: 60px;
+    .flexContainer {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      .flex {
+        width: 50%;
+        .flexObject {
+          text-align: center;
+          margin-top: 30px;
+          i {
+            font-size: 50pt;
+            color: $primaryColor;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .popularProduct {
+    width: 100%;
+    display: flex;
+    background-color: $primaryColor;
+    margin-top: 60px;
+    .popular {
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      p {
+        @include fontText;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20pt;
+        color: $fontColorOnGreen;
+      }
+      button {
+        @include buttonWhite;
+        width: 100%;
+        margin-top: 10px;
+      }
+      button:hover {
+        @include buttonWhiteHover;
+      }
+    }
+  }
+
+  .newsletter {
+    margin-top: 60px;
+    padding: 0 5% 0 5%;
+  }
+  p {
+    @include fontText;
+    text-align: center;
+    margin-top: 20px;
+  }
+  form {
+    input {
+      @include input;
+      width: 100%;
+      margin-top: 25px;
+    }
+    button {
+      @include buttonGreen;
+      width: 70%;
+      margin-top: 15px;
+    }
+    button:hover {
+      @include buttonGreenHover;
+    }
+  }
+
+  .about {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 0 5% 0 5%;
+    .aboutTxt {
+      p {
+        text-align: left;
+      }
+    }
+    .imgBox {
+      margin-top: 20px;
+      .quote {
+        p {
+          text-align: left;
+          font-size: 14pt;
+        }
+      }
+    }
+  }
+}
+
+//Index - Sabine (Slut)------------------------------------------
+
 
 .products{
 
@@ -440,11 +616,32 @@ footer{
 
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
-
 }
 
 @media screen and (min-width: 992px) {
   // Alt der ændres i tablet liggende fra mobil og tablet stående
+  h1{font-size: 45pt}
+
+  .index{
+    .weOffer {
+      margin-top: 70px;
+      .flexContainer {
+        width: 80%;
+        .flex {
+          display: flex;
+          justify-content: space-around;
+          .i{
+            margin-top: 35px;
+          }
+        }
+      }
+    }
+
+    .popularProduct{
+      margin-top: 80px;
+    }
+  }
+
 
 
   //DROP DOWN____________________________________________________
@@ -651,7 +848,6 @@ header {
       }
     }
   }
-
 }
 
 @media screen and (min-width: 1200px) {
