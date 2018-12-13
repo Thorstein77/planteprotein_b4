@@ -9,7 +9,9 @@
     require ("php/head.php");
     ?>
 <!-- Titel som ses oppe i browserens tab mv. -->
+
 <title>plante-protein</title>
+
 
 </head>
 

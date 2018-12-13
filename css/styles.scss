@@ -116,6 +116,190 @@ a{
 }
 
 
+.blogOverheader{
+  text-align: center;
+}
+
+.blogHeader{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.blogInfobox{
+  height: auto;
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+
+
+.blogInfo{
+  height: auto;
+  width: 80%;
+  flex-direction: row;
+}
+
+.blogInfoshare{
+ flex-direction: row;
+}
+
+.blogLink{
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+
+.blogIntro{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.blogHeader1{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogPic1{
+  width: 100%;
+}
+
+.blogTxt1{
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.blogHeader2{
+  width: 90%;
+  margin: 30px auto 0 auto;
+
+}
+
+.blogPic2{
+  width: 100%;
+}
+
+.blogTxt2{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blog{
+  margin: 0 auto;
+}
+
+.blogHeader3{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.blogPic3{
+    width: 100%;
+}
+
+.blogTxt3{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogHeader4{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.blogPic4{
+  width: 100%;
+}
+
+.blogTxt4{
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.blogHeader5{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogPic5{
+  width: 100%;
+}
+
+.blogTxt5{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.blogOther{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogKilde{
+  margin-left: 15px;
+
+}
+
+.blogRead{
+  margin-left: 38%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.myHeader{
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.myInfobox{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.myButtonedit{
+margin-top: 20px;
+}
+
+.myPassword{
+  width: 90%;
+  margin-top: 20px;
+}
+
+.myInputbox{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.myHistory{
+  li{
+    list-style: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 header{
   display: grid;
   width: 100%;
@@ -824,6 +1008,75 @@ header {
 
 
 
+
+.blogPic1{
+  img{
+    width: 50%;
+  }
+}
+ .blogPic2{
+   img{
+     width: 50%;
+   }
+ }
+
+.blogPic3{
+  img{
+    width: 50%;
+  }
+}
+
+.blogPic4{
+  img{
+    width: 50%;
+  }
+}
+
+.blogPic5{
+  img{
+    width: 50%;
+  }
+}
+
+
+  
+.blogFlexcontainer{
+   display: flex;               
+   flex-direction: row-reverse;
+}  
+
+.blogContent{
+  width: 90%;
+  margin: 0 auto;
+  
+}
+  
+  .blogInfobox{
+    margin-left: 200px;
+    margin-top: 30px;
+  }
+
+  .blogLink{
+        margin-left: 200px;
+  }
+
+  .blogOther{
+    width: 40%;
+    margin-top: 30px;
+  }
+
+  .blogHeader{
+   margin-left: -200px;
+  }
+
+.blogKilde{
+  margin-left: 200px;
+}
+
+.blogRead{
+  margin-left: 23%;
+}
+
   footer {
     .footerGradient{
       height: 100px;
@@ -869,6 +1122,37 @@ header {
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+
+.blogHeader{
+margin-left: -170px;
+
+}
+
+  .blogInfobox{
+    margin-left: 310px;
+  }
+
+  
+.blogLink{
+  margin-left: 270px;
+}
+
+  .blogInfo{
+    width: 70%;
+  }
+
+  .blogOther{
+    width: 50%;
+  }
+
+.blogKilde{
+  margin-left: 200px;
+}
+
+  .blogRead{
+
+  }
+  
   footer {
     .footerGradient{
       height: 125px;
