@@ -370,6 +370,7 @@ hr {
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 ul {
+  display: none;
   padding:0;
   margin: 15vw 0 0 0;
   list-style: none;
@@ -542,7 +543,7 @@ ul ul {
 
 //Index - Sabine (Slut)------------------------------------------
 
-
+//Products - Kristian (Start)
 .products{
 
   h1{
@@ -730,6 +731,8 @@ ul ul {
   }
 }
 
+//Products - Kristian (Slut)
+
 .kundeservice{
 
   display: grid;
@@ -747,6 +750,8 @@ ul ul {
 
 }
 
+
+// Footer - Kristian (Start)
 footer{
   background-color: $primaryColor;
 
@@ -814,6 +819,8 @@ footer{
     }
   }
 }
+
+// Footer - Kristian (Slut)
 
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
