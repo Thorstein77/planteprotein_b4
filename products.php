@@ -144,7 +144,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -190,7 +190,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -236,7 +236,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -282,7 +282,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
