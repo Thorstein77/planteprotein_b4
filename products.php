@@ -146,7 +146,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -192,7 +192,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -238,7 +238,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -284,7 +284,7 @@ require ("php/header.php");
                     Greens proteinpulver
                 </h2>
 
-                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+                <img src="images/productImages/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
 
@@ -355,7 +355,6 @@ require ("php/footer.php");
             if((objectBottomPosition >= windowTopPosition) &&
                 (objectTopPosition <= windowBottomPosition)){
                 $object.addClass('inView');
-                console.log('lalablah');
             }else{
                 $object.removeClass('inView');
             }
