@@ -18,6 +18,14 @@ $darkGray: #3a3a3a;
   font-family: 'Quicksand', sans-serif;
 }
 
+@mixin textInput{
+  margin: 2vw;
+  padding: 2vw;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background-color: #e6e6e6;
+}
+
 body {
   margin: 0; // Ingen kanter i siden af browser
   @include fontText;
@@ -57,13 +65,41 @@ a{
 
 .products{
 
+  h1{
+    text-align: center;
+    margin: 5vw 0;
+  }
+
+  .productText{
+    width: 90%;
+    margin: 5vw auto;
+  }
 
   aside{
+    margin: 5vw 0;
+
+    .search{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5vw 0;
+
+      input{
+        @include textInput;
+        width: 75%;
+      }
+
+      button{
+        border: none;
+        background-color: white;
+        font-size: 25px;
+      }
+    }
 
     .grid{
       display: grid;
       grid-template: 40vw 40vw / 47.5% 5% 47.5%;
-      margin: 0 5%;
+      margin: 5vw 5%;
 
       ul{
         list-style-type: none;
@@ -95,6 +131,11 @@ a{
   section{
 
     .product{
+      margin: 0;
+
+      h2{
+        margin: 0 0 5vw 0;
+      }
 
       h2, h3{
         text-align: center;
@@ -103,10 +144,23 @@ a{
       a{
         text-decoration: none;
         color: $fontColor;
-
       }
 
       .info{
+        height: 130px;
+
+        .gradient{
+          opacity: 0;
+          transition: opacity;
+          -moz-transition: opacity;
+          -webkit-transition: opacity;
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
 
         h3{
           padding: 5vw 0 0 0;
@@ -115,15 +169,20 @@ a{
         .price{
           display: flex;
           justify-content: space-around;
-
           padding: 3vw 0;
+          position: relative;
 
           .icons{
-            display: none;
+            opacity: 0;
+            display: flex;
+            transition: opacity;
+            -moz-transition: opacity;
+            -webkit-transition: opacity;
             justify-content: space-around;
             align-items: center;
             width: 50%;
             overflow: hidden;
+
 
             .iconImg{
               width: 20%;
@@ -131,6 +190,12 @@ a{
           }
 
           p{
+            position: absolute;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            right: auto;
+
             font-size: 35px;
             font-weight: bold;
             color: $fontColor;
@@ -138,20 +203,31 @@ a{
         }
       }
 
-      .inView {
-        background-image: linear-gradient(white, $primaryColor);
+      .inView{
+        position: relative;
+
+        .gradient{
+          opacity: 1;
+          background-image: linear-gradient(white, $primaryColor);
+          transition: opacity 2s ease-in-out;
+          -moz-transition: opacity 2s ease-in-out;
+          -webkit-transition: opacity 2s ease-in-out;
+        }
 
         .price {
 
           .icons {
-            display: flex;
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
+            -moz-transition: opacity 2s ease-in-out;
+            -webkit-transition: opacity 2s ease-in-out;
           }
 
           p {
+            position: relative;
             font-size: 45px;
             color: $fontColorOnGreen;
           }
-
         }
       }
 

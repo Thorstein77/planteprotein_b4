@@ -19,19 +19,25 @@ require ("php/header.php");
 ?>
 
 <main class="products">
-    <h1></h1>
+    <h1>Produkter</h1>
 
-    <p>
-
+    <p class="productText">
+        Hos Plante-protein.dk er alle produkter 100% veganske. Du kan
+        være helt rolig mens du kigger på vores udvalg. Derudover
+        er alle produkter markeret med et ikon der viser om de er
+        glutenfri, laktosefri eller økologiske.
     </p>
 
-    <div>
-        <input>
-
-        <i class="fas fa-search"></i>
-    </div>
-
     <aside>
+
+        <div class="search">
+            <input placeholder="Søg i produkter">
+
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
         <h2></h2>
 
         <div class="grid">
@@ -129,7 +135,7 @@ require ("php/header.php");
         </div>
     </aside>
 
-    <section>
+    <section class="productsSection">
         <div class="product">
 
             <a href="#">
@@ -141,10 +147,12 @@ require ("php/header.php");
                 <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
 
                 <div class="info">
+
+                    <div class="gradient"></div>
+
                     <h3>Vanilje | Chokolade</h3>
 
                     <div class="price">
-
 
                         <div class="icons">
                             <div class="iconImg">
@@ -174,11 +182,143 @@ require ("php/header.php");
             </div>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="product">
+
+            <a href="#">
+                <h2>
+                    Vega Protein &<br>
+                    Greens proteinpulver
+                </h2>
+
+                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+
+                <div class="info">
+
+                    <div class="gradient"></div>
+
+                    <h3>Vanilje | Chokolade</h3>
+
+                    <div class="price">
+
+                        <div class="icons">
+                            <div class="iconImg">
+                                <img src="images/icons/gluten.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/soy.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/lactose.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/organic.png">
+                            </div>
+                        </div>
+
+                        <p>299,-</p>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex">
+                <button>Læg i kurv</button>
+            </div>
+        </div>
+
+        <div class="product">
+
+            <a href="#">
+                <h2>
+                    Vega Protein &<br>
+                    Greens proteinpulver
+                </h2>
+
+                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+
+                <div class="info">
+
+                    <div class="gradient"></div>
+
+                    <h3>Vanilje | Chokolade</h3>
+
+                    <div class="price">
+
+                        <div class="icons">
+                            <div class="iconImg">
+                                <img src="images/icons/gluten.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/soy.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/lactose.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/organic.png">
+                            </div>
+                        </div>
+
+                        <p>299,-</p>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex">
+                <button>Læg i kurv</button>
+            </div>
+        </div>
+
+        <div class="product">
+
+            <a href="#">
+                <h2>
+                    Vega Protein &<br>
+                    Greens proteinpulver
+                </h2>
+
+                <img src="images/vega-protein-greens-proteinpulver.png" alt="vega protein greens vegansk proteinpulver">
+
+                <div class="info">
+
+                    <div class="gradient"></div>
+
+                    <h3>Vanilje | Chokolade</h3>
+
+                    <div class="price">
+
+                        <div class="icons">
+                            <div class="iconImg">
+                                <img src="images/icons/gluten.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/soy.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/lactose.png">
+                            </div>
+
+                            <div class="iconImg">
+                                <img src="images/icons/organic.png">
+                            </div>
+                        </div>
+
+                        <p>299,-</p>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex">
+                <button>Læg i kurv</button>
+            </div>
+        </div>
     </section>
 </main>
 
@@ -217,8 +357,9 @@ require ("php/footer.php");
             }
         });
     }
-
-
+</script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript">
 
 </script>
 
