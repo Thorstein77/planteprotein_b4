@@ -118,7 +118,7 @@
 $(document).ready(function(e) {
     // Din kode her
 
-    
+
 });
 </script>
 

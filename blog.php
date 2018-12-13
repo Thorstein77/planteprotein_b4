@@ -180,7 +180,7 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic4">
-        <img src="images/kikærternye.jpg"
+        <img src="images/kikrternye.jpg"
     </div>
     <div class="blogTxt4">
         Vi elsker hummus! det er uden tvivl veganernes bedste ven.<br> <br>
@@ -197,7 +197,7 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic5">
-        <img src="images/Gærflager21.jpg"
+        <img src="images/Grflager21.jpg"
     </div>
     <div class="blogTxt5">
         Hvis du ikke allerede kender til fænomenet er det på tide. Er du lige som de fleste vilde med pasta retter, så er dette et fantastisk supplement til at drysse ovenpå, da flagerne har en oste agtig smag.<br> <br>
