@@ -26,9 +26,61 @@ $darkGray: #3a3a3a;
   background-color: #e6e6e6;
 }
 
+@mixin buttonGreen {
+  cursor: pointer;
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 40px;
+  color: $fontColorOnGreen;
+  font-size: 18pt;
+  @include fontText;
+  padding: 5px 30px;
+}
+@mixin buttonGreenHover{
+  background-color: $primaryColor;
+  color: $darkGray;
+  transition: transform .2s;
+  transform: scale(1.1);
+}
+
+@mixin buttonWhite{
+  cursor: pointer;
+  background-color: $fontColorOnGreen;
+  border: none;
+  border-radius: 40px;
+  color: $darkGray;
+  font-size: 18pt;
+  @include fontText;
+  padding: 5px 30px;
+}
+@mixin buttonWhiteHover{
+  @include fontText;
+  color: $primaryColor;
+  transition: transform .2s;
+  transform: scale(1.1);
+}
+
+@mixin input{
+  font-size: 14pt;
+  padding: 6px 0 5px 10px;
+  border: 1px solid $darkGray;
+  border-radius: 12px;
+  background-color: #e3e3e3;
+
+}
+
 body {
   margin: 0; // Ingen kanter i siden af browser
   @include fontText;
+}
+
+h1{
+  @include fontHeadline;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 35pt;
+  color: $darkGray;
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,6 +114,434 @@ img {
 a{
   text-decoration: none;
 }
+
+
+.blogOverheader{
+  text-align: center;
+}
+
+.blogHeader{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.blogInfobox{
+  height: auto;
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+
+
+.blogInfo{
+  height: auto;
+  width: 80%;
+  flex-direction: row;
+}
+
+.blogInfoshare{
+ flex-direction: row;
+}
+
+.blogLink{
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+
+.blogIntro{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.blogHeader1{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogPic1{
+  width: 100%;
+}
+
+.blogTxt1{
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.blogHeader2{
+  width: 90%;
+  margin: 30px auto 0 auto;
+
+}
+
+.blogPic2{
+  width: 100%;
+}
+
+.blogTxt2{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blog{
+  margin: 0 auto;
+}
+
+.blogHeader3{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.blogPic3{
+    width: 100%;
+}
+
+.blogTxt3{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogHeader4{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.blogPic4{
+  width: 100%;
+}
+
+.blogTxt4{
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.blogHeader5{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogPic5{
+  width: 100%;
+}
+
+.blogTxt5{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.blogOther{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blogKilde{
+  margin-left: 15px;
+
+}
+
+.blogRead{
+  margin-left: 38%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.myHeader{
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.myInfobox{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.myButtonedit{
+margin-top: 20px;
+}
+
+.myPassword{
+  width: 90%;
+  margin-top: 20px;
+}
+
+.myInputbox{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.myHistory{
+  li{
+    list-style: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+header{
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 30% auto 20%;
+
+.headerLogo{
+  z-index: 10;
+  display: grid;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  padding-top: 10px;
+  justify-items: end;
+  height: 7vw;
+
+  img{
+    width: 55%;
+  }
+}
+
+.headerMenuWeb{
+  display: none;
+}
+
+
+// DROP DOWN____________________________________________________
+
+/* Giving a background-color to the nav container. */
+nav {
+  z-index: 5;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+  background-color: $primaryColor;
+  padding-top: 5vw;
+
+
+img {
+  width: 40%;
+  height: auto;
+
+}
+
+p {
+  text-align: center;
+}
+
+hr {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.toggle, [id^=drop] {
+  display: none;
+}
+
+  /* Styling the toggle lable */
+  .toggle {
+    display: block;
+    text-decoration:none;
+    border:none;
+    width: 20%;
+    float: right;
+  }
+
+  .toggle:hover {
+    cursor: pointer;
+  }
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+ul {
+  padding:0;
+  margin: 15vw 0 0 0;
+  list-style: none;
+  position: relative;
+}
+
+/* Positioning the navigation items inline */
+ul li {
+  margin: 0;
+  display:inline-block;
+  width: 100%;
+}
+
+/* Styling the links */
+a {
+  display:block;
+  padding:14px 7vw;
+  color:#FFF;
+  font-size: 21pt;
+  text-decoration:none;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 25px;
+}
+
+.menuLogInd{
+  a {
+    padding: 14px 7vw 0 7vw;
+    line-height: 25px;
+  }
+}
+
+}
+
+.headerGradient {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 3;
+  background-image: linear-gradient($primaryColor, transparent);
+  height: 15vw;
+}
+
+}
+
+//Index - Sabine (Start) ----------------------------------------
+.index {
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: $primaryColor;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      color: $darkGray;
+  }
+
+  .weOffer {
+    width: 100%;
+    margin-top: 60px;
+    .flexContainer {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      .flex {
+        width: 50%;
+        .flexObject {
+          text-align: center;
+          margin-top: 30px;
+          i {
+            font-size: 50pt;
+            color: $primaryColor;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .popularProduct {
+    width: 100%;
+    display: flex;
+    background-color: $primaryColor;
+    margin-top: 60px;
+    .popular {
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      p {
+        @include fontText;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20pt;
+        color: $fontColorOnGreen;
+      }
+      button {
+        @include buttonWhite;
+        width: 100%;
+        margin-top: 10px;
+      }
+      button:hover {
+        @include buttonWhiteHover;
+      }
+    }
+  }
+
+  .newsletter {
+    margin-top: 60px;
+    padding: 0 5% 0 5%;
+  }
+  p {
+    @include fontText;
+    text-align: center;
+    margin-top: 20px;
+  }
+  form {
+    input {
+      @include input;
+      width: 100%;
+      margin-top: 25px;
+    }
+    button {
+      @include buttonGreen;
+      width: 70%;
+      margin-top: 15px;
+    }
+    button:hover {
+      @include buttonGreenHover;
+    }
+  }
+
+  .about {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 0 5% 0 5%;
+    .aboutTxt {
+      p {
+        text-align: left;
+      }
+    }
+    .imgBox {
+      margin-top: 20px;
+      .quote {
+        p {
+          text-align: left;
+          font-size: 14pt;
+        }
+      }
+    }
+  }
+}
+
+//Index - Sabine (Slut)------------------------------------------
+
 
 .products{
 
@@ -250,6 +730,23 @@ a{
   }
 }
 
+.kundeservice{
+
+  display: grid;
+  grid-template-rows: 100% auto auto auto;
+  grid-template-columns: auto auto;
+
+  .kundeserviceOverskrift{
+    display: grid;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    justify-content: center;
+    color: $fontColor;
+    padding: 20px 0 0 0;
+  }
+
+}
+
 footer{
   background-color: $primaryColor;
 
@@ -324,6 +821,261 @@ footer{
 
 @media screen and (min-width: 992px) {
   // Alt der ændres i tablet liggende fra mobil og tablet stående
+  h1{font-size: 45pt}
+
+  .index{
+    .weOffer {
+      margin-top: 70px;
+      .flexContainer {
+        width: 80%;
+        .flex {
+          display: flex;
+          justify-content: space-around;
+          .i{
+            margin-top: 35px;
+          }
+        }
+      }
+    }
+
+    .popularProduct{
+      margin-top: 80px;
+    }
+  }
+
+
+
+  //DROP DOWN____________________________________________________
+
+header {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 15% 30% auto;
+
+
+  .headerLogo{
+    z-index: 10;
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    padding-top: 10px;
+    justify-items: end;
+    height: auto;
+    background-color: $primaryColor;
+
+    img{
+      width: 45%;
+    }
+  }
+
+  nav {
+    margin: 0;
+    z-index: 5;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 2;
+    background-color: $primaryColor;
+    padding: 0 5% 0 40%;
+    display: grid;
+    align-content: end;
+
+  }
+
+  nav ul {
+    padding:0;
+    margin: 0;
+    position: relative;
+  }
+
+  nav a {
+    display: block;
+    padding: 0;
+    color:#FFF;
+    font-size: 14pt;
+    line-height: 18pt;
+    text-decoration: none;
+
+  }
+
+  nav .menu{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  nav .menuLogInd{
+    a {
+      padding: 0;
+      line-height: 18pt;
+    }
+  }
+
+  .menuHrLinje {
+    display: none;
+  }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  nav .toggle + a,
+  nav .menu {
+  }
+
+  /* Styling the toggle lable */
+  nav .toggle {
+    display: none;
+    text-decoration:none;
+    border:none;
+    width: 20%;
+    float: right;
+  }
+
+  nav .toggle:hover {
+    cursor: pointer;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: auto;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    font-weight: bold;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a{
+    padding:14px 20px;
+    color:#FFF;
+    font-size:17px;
+  }
+
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    display: block;
+    position:static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: block;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+
+  }
+
+  .headerGradient {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 3;
+    background-image: linear-gradient($primaryColor, transparent);
+    height: 5vw;
+  }
+
+}
+
+
+
+
+.blogPic1{
+  img{
+    width: 50%;
+  }
+}
+ .blogPic2{
+   img{
+     width: 50%;
+   }
+ }
+
+.blogPic3{
+  img{
+    width: 50%;
+  }
+}
+
+.blogPic4{
+  img{
+    width: 50%;
+  }
+}
+
+.blogPic5{
+  img{
+    width: 50%;
+  }
+}
+
+
+  
+.blogFlexcontainer{
+   display: flex;               
+   flex-direction: row-reverse;
+}  
+
+.blogContent{
+  width: 90%;
+  margin: 0 auto;
+  
+}
+  
+  .blogInfobox{
+    margin-left: 200px;
+    margin-top: 30px;
+  }
+
+  .blogLink{
+        margin-left: 200px;
+  }
+
+  .blogOther{
+    width: 40%;
+    margin-top: 30px;
+  }
+
+  .blogHeader{
+   margin-left: -200px;
+  }
+
+.blogKilde{
+  margin-left: 200px;
+}
+
+.blogRead{
+  margin-left: 23%;
+}
 
   footer {
     .footerGradient{
@@ -370,6 +1122,37 @@ footer{
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+
+.blogHeader{
+margin-left: -170px;
+
+}
+
+  .blogInfobox{
+    margin-left: 310px;
+  }
+
+  
+.blogLink{
+  margin-left: 270px;
+}
+
+  .blogInfo{
+    width: 70%;
+  }
+
+  .blogOther{
+    width: 50%;
+  }
+
+.blogKilde{
+  margin-left: 200px;
+}
+
+  .blogRead{
+
+  }
+  
   footer {
     .footerGradient{
       height: 125px;

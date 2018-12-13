@@ -19,6 +19,7 @@ require ("php/header.php");
 ?>
 
 <main class="products">
+
     <h1>Produkter</h1>
 
     <p class="productText">
@@ -130,11 +131,12 @@ require ("php/header.php");
                         <input type="checkbox">
                         Vega
                     </li>
+
                 </ul>
             </div>
         </div>
     </aside>
-
+  
     <section class="productsSection">
         <div class="product">
 
@@ -318,6 +320,7 @@ require ("php/header.php");
             <div class="flex">
                 <button>Læg i kurv</button>
             </div>
+
         </div>
     </section>
 </main>
@@ -327,6 +330,7 @@ require ("php/footer.php");
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
     var $animateInfo = $('.info');
@@ -361,6 +365,7 @@ require ("php/footer.php");
 <script type="text/javascript">
 
 </script>
+
 
 </body>
 </html>
