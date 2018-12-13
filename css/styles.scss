@@ -546,6 +546,23 @@ ul ul {
   }
 }
 
+.kundeservice{
+
+  display: grid;
+  grid-template-rows: 100% auto auto auto;
+  grid-template-columns: auto auto;
+
+  .kundeserviceOverskrift{
+    display: grid;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    justify-content: center;
+    color: $fontColor;
+    padding: 20px 0 0 0;
+  }
+
+}
+
 footer{
   background-color: $primaryColor;
 
