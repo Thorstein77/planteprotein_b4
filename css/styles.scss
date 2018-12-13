@@ -312,11 +312,15 @@ header{
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
   padding-top: 10px;
-  justify-items: end;
   height: 7vw;
 
-  img{
+  a{
+    justify-self: end;
     width: 55%;
+  }
+
+  img{
+    width: 100%;
   }
 }
 
@@ -736,16 +740,74 @@ ul ul {
 .kundeservice{
 
   display: grid;
-  grid-template-rows: 100% auto auto auto;
-  grid-template-columns: auto auto;
+  grid-template-rows: 100% auto auto auto auto auto;
+  grid-template-columns: auto;
+
+  p{
+    padding: 0 15px;
+  }
 
   .kundeserviceOverskrift{
     display: grid;
-    grid-column: 1 / span 2;
     grid-row: 1 / span 1;
     justify-content: center;
     color: $fontColor;
-    padding: 20px 0 0 0;
+    padding: 40px 0;
+  }
+
+  .kundeserviceTekst1{
+    grid-row: 2 / span 1;
+
+  }
+
+  .kundeserviceBillede{
+    display: grid;
+    grid-row: 3 / span 1;
+    padding: 35px 0;
+    justify-content: center;
+  }
+
+  .kundeserviceTekst2{
+    grid-row: 4 / span 1;
+  }
+
+  .kundeserviceFormularer {
+    grid-row: 5 / span 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 15px 0 15px;
+    margin: 8px 0;
+
+    form textarea {
+      @include input;
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    form input {
+      @include input;
+      width: 100%;
+      margin: 8px 0;
+    }
+
+  }
+
+  .kundeserviceKnap{
+    grid-row: 6 / span 1;
+    display: grid;
+    padding: 0 15px 50px 15px;
+
+
+
+    button{
+      @include buttonGreen;
+      width: 50%;
+      justify-self: end;
+    }
+
+    button:hover{
+      @include buttonGreenHover
+    }
   }
 
 }
@@ -822,6 +884,34 @@ footer{
 
 // Footer - Kristian (Slut)
 
+
+.side404{
+
+  display: grid;
+  padding: 70px 15px;
+  margin: 0 15px;
+
+  a{
+    text-align: center;
+  }
+
+  img {
+    width: 300px;
+    justify-self: center;
+  }
+
+  button{
+    @include buttonGreen;
+    font-size: 14pt;
+    margin-top: 30px;
+  }
+
+  button:hover{
+    @include buttonGreenHover;
+  }
+
+}
+
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
 }
@@ -871,8 +961,12 @@ header {
     height: auto;
     background-color: $primaryColor;
 
-    img{
+    a{
       width: 45%;
+    }
+
+    img{
+      width: 100%;
     }
   }
 
@@ -1013,7 +1107,50 @@ header {
 
 }
 
+.kundeservice{
+  display: grid;
+  width: 900px;
+  grid-template-rows: 100% auto auto auto;
+  grid-template-columns: auto 40%;
+  margin: 0 auto;
 
+  .kundeserviceOverskrift{
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  .kundeserviceTekst1{
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .kundeserviceTekst2{
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    width: 100%;
+    height: auto;
+    padding-top: 20%;
+  }
+
+  .kundeserviceBillede {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    padding: 0;
+  }
+
+  .kundeserviceFormularer{
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  .kundeserviceKnap{
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+}
 
 
 .blogPic1{
