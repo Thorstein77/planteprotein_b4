@@ -64,6 +64,68 @@ while($wData = mysqli_fetch_assoc($weight)){
 ?>
 
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<?php
+
+if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
+    $pagenum = mysqli_real_escape_string($db, $_GET['pagenum']);
+}else{
+    $pagenum = 1;
+}
+
+echo $pagenum."<br>";
+
+// hvor mange produkter vi vil se per side
+$totalProductsPerPage = 9;
+// beregner hvor mange produkter der skal 'springes over'
+$offset = ($pagenum - 1) * $totalProductsPerPage;
+$prevPage = ($pagenum -1);
+$nextPage = ($pagenum + 1);
+$edjacents = "2";
+
+$resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products");
+$totalProducts = mysqli_fetch_array($resultCount);
+$totalProducts = $totalProducts['totalProducts'];
+$totalNumOfPages = ceil($totalProducts / $totalProductsPerPage);
+$secondLast = ($totalNumOfPages - 1);
+
+$result = mysqli_query($db, "SELECT * FROM products LIMIT $offset, $totalProductsPerPage");
+while($row = mysqli_fetch_array($result)){
+
+    // her insættes de ting der skal udskrives, aka produkter
+
+    echo $row['pId'];
+}
+?>
+
+<ul class="pagination">
+    <?php if($pagenum > 1){
+        echo "<li><a href='?pagenum=1'>First Page</a></li>";
+    } ?>
+
+    <li <?php if($pagenum <= 1){ echo "class='disabled'"; } ?>>
+        <a <?php if($pagenum > 1){
+            echo "href='?pagenum=$prevPage'";
+        } ?>>Previous</a>
+    </li>
+
+    <li <?php if($pagenum >= $totalNumOfPages){
+        echo "class='disabled'";
+    } ?>>
+        <a <?php if($pagenum < $totalNumOfPages) {
+            echo "href='?pagenum=$nextPage'";
+        } ?>>Next</a>
+    </li>
+
+    <?php if($pagenum < $totalNumOfPages){
+        echo "<li><a href='?pagenum=$totalNumOfPages'>Last &rsaquo;&rsaquo;</a></li>";
+    } ?>
+</ul>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
