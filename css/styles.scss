@@ -115,6 +115,27 @@ a{
   text-decoration: none;
 }
 
+.searchBlog{
+  display: flex;
+  justify-content: center;
+
+  width: 90%;
+  margin: 20px auto;
+
+  input{
+    width: 80%;
+    border: black 1px solid;
+  border-radius: 30px;
+  padding: 1vw;
+
+  }
+
+  button{
+    width: 10%;
+  }
+}
+
+
 
 .blogOverheader{
   text-align: center;
@@ -264,39 +285,62 @@ a{
 .myInfobox{
   width: 90%;
   margin: 0 auto;
+
 }
 
 .myButtonedit{
-margin-top: 20px;
+@include buttonGreen{
+
+}
+  .myButtonedit:hover{
+    @include buttonGreenHover;
+  }
+
+  margin-left: 20px;
 }
 
 .myPassword{
-  width: 90%;
-  margin-top: 20px;
+  margin-left: 10%;
+  @include buttonGreen;
+ .myPassword:hover{
+   @include buttonGreenHover;
+ }
 }
 
-.myInputbox{
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+.Nyhedsbrev{
+  @include buttonGreen;
+  .Nyhedsbrev:hover{
+  @include buttonGreenHover
+  }
 }
+
+.myOrders{
+  background-color: #0bd951;
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+
+  
+}
+
+
 
 .myHistory{
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+
   li{
     list-style: none;
+
+
   }
+.myOrders .myHistory{
+  display: inline-block;
 
 }
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -1107,6 +1151,27 @@ header {
 
 }
 
+  .searchBlog{
+    display: flex;
+    justify-content: center;
+
+    width: 90%;
+    margin: 20px auto;
+
+    input{
+      width: 80%;
+      border: black 1px solid;
+      border-radius: 30px;
+      padding: 1vw;
+
+    }
+
+    button{
+      width: 10%;
+      border: none;
+    }
+  }
+
 .kundeservice{
   display: grid;
   width: 900px;
@@ -1151,6 +1216,7 @@ header {
   }
 
 }
+
 
 
 .blogPic1{
@@ -1266,6 +1332,30 @@ header {
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+
+  .searchBlog{
+    display: flex;
+    justify-content: center;
+
+    width: 30%;
+    margin: 20px auto;
+    margin-left: -50px;
+
+
+    input{
+      width: 80%;
+      border: black 1px solid;
+      border-radius: 30px;
+      padding: 1vw;
+
+    }
+
+    button{
+      width: 10%;
+      border: none;
+    }
+  }
+
 
 .blogHeader{
 margin-left: -170px;
