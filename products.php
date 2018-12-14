@@ -361,11 +361,6 @@ require ("php/footer.php");
         });
     }
 </script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript">
-
-</script>
-
 
 </body>
 </html>

@@ -75,9 +75,6 @@ if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
 }else{
     $pagenum = 1;
 }
-
-echo $pagenum."<br>";
-
 // hvor mange produkter vi vil se per side
 $totalProductsPerPage = 9;
 // beregner hvor mange produkter der skal 'springes over'
@@ -93,23 +90,124 @@ $totalNumOfPages = ceil($totalProducts / $totalProductsPerPage);
 $secondLast = ($totalNumOfPages - 1);
 
 $result = mysqli_query($db, "SELECT * FROM products LIMIT $offset, $totalProductsPerPage");
-while($row = mysqli_fetch_array($result)){
+
+while($row = mysqli_fetch_array($result)) {
+    $pId = $row["pId"];
+    $img = mysqli_query($db, "SELECT * FROM images WHERE iPId = '$pId'");
+    $imgResult = mysqli_fetch_array($img);
+    $taste = mysqli_query($db, "SELECT * FROM taste WHERE tPId = '$pId'");
+    $price = mysqli_query($db, "SELECT * FROM weight WHERE wPId = '$pId' ORDER BY wPrice ASC");
+    $priceResult = mysqli_fetch_array($price);
 
     // her insættes de ting der skal udskrives, aka produkter
+    ?>
+        <main  class="products">
+            <section class="productsSection">
+                <div class="product">
 
-    echo $row['pId'];
+                    <a href="product.php?pid=<?php echo $pId; ?>">
+                        <h2>
+                            <?php
+                            echo $row["pBrand"]."<br>".$row["pName"];
+                            ?>
+                        </h2>
+
+                        <img src="<?php echo $imgResult['iLink'] ?>" alt="<?php echo $imgResult['iAlt'] ?>">
+
+                        <div class="info">
+
+                            <div class="gradient"></div>
+
+                            <h3>
+                                <?php
+                                    $i = 1;
+                                    $tString = '';
+                                    $tArray = array();
+                                    while ($tasteCount = mysqli_fetch_assoc($taste)){
+                                        $tName = $tasteCount["tName"];
+                                        array_push($tArray, $tName);
+                                    }
+
+                                    $tCount = count($tArray);
+
+                                    foreach ($tArray as $value){
+                                        echo $value;
+                                        if($i < $tCount){
+                                            echo " | ";
+                                        }
+                                        $i++;
+                                    }
+                                ?>
+                            </h3>
+
+                            <div class="price">
+
+                                <div class="icons">
+                                    <?php
+                                    if($row["pGluten"] == 'Yes'){
+                                        ?>
+                                        <div class="iconImg">
+                                            <img src="images/icons/gluten.png">
+                                        </div>
+                                        <?php
+                                    }
+
+                                    if($row["pSoy"] == 'Yes'){
+                                        ?>
+                                        <div class="iconImg">
+                                            <img src="images/icons/soy.png">
+                                        </div>
+                                        <?php
+                                    }
+
+                                    if($row["pLactose"] == 'Yes') {
+                                        ?>
+                                        <div class="iconImg">
+                                            <img src="images/icons/lactose.png">
+                                        </div>
+                                        <?php
+                                    }
+
+                                    if($row["pOrganic"] == 'Yes') {
+                                        ?>
+
+                                        <div class="iconImg">
+                                            <img src="images/icons/organic.png">
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+
+                                <p>
+                                    <?php
+                                        echo $priceResult["wPrice"];
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="flex">
+                        <button>Læg i kurv</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <?php
 }
 ?>
 
 <ul class="pagination">
     <?php if($pagenum > 1){
-        echo "<li><a href='?pagenum=1'>First Page</a></li>";
+        echo "<li><a href='?pagenum=1'>First</a></li>";
     } ?>
 
     <li <?php if($pagenum <= 1){ echo "class='disabled'"; } ?>>
         <a <?php if($pagenum > 1){
             echo "href='?pagenum=$prevPage'";
-        } ?>>Previous</a>
+        } ?>>Prev</a>
     </li>
 
     <li <?php if($pagenum >= $totalNumOfPages){
@@ -121,13 +219,40 @@ while($row = mysqli_fetch_array($result)){
     </li>
 
     <?php if($pagenum < $totalNumOfPages){
-        echo "<li><a href='?pagenum=$totalNumOfPages'>Last &rsaquo;&rsaquo;</a></li>";
+        echo "<li><a href='?pagenum=$totalNumOfPages'>Last</a></li>";
     } ?>
 </ul>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    var $animateInfo = $('.info');
+    var $window = $(window);
+
+    $window.on('scroll resize', checkIfOnScreen);
+    $window.trigger('scroll');
+
+    function checkIfOnScreen(){
+        var windowHeight = $window.height();
+        var windowTopPosition = $window.scrollTop();
+        var windowBottomPosition = (windowTopPosition + windowHeight);
+
+        $.each($animateInfo, function () {
+
+            var $object = $(this);
+            var objectHeight = $object.outerHeight();
+            var objectTopPosition = $object.offset().top;
+            var objectBottomPosition = (objectTopPosition + objectHeight);
+
+            // check if object is in view
+            if((objectBottomPosition >= windowTopPosition) &&
+                (objectTopPosition <= windowBottomPosition)){
+                $object.addClass('inView');
+            }else{
+                $object.removeClass('inView');
+            }
+        });
+    }
 
 </script>
 
