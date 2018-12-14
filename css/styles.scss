@@ -632,7 +632,7 @@ ul ul {
       }
 
       .info{
-        height: 130px;
+        min-height: 130px;
 
         .gradient{
           opacity: 0;
@@ -663,7 +663,7 @@ ul ul {
             transition: opacity;
             -moz-transition: opacity;
             -webkit-transition: opacity;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-items: center;
             width: 50%;
             overflow: hidden;
@@ -671,6 +671,7 @@ ul ul {
 
             .iconImg{
               width: 20%;
+              margin-right: 5%;
             }
           }
 
@@ -732,6 +733,30 @@ ul ul {
         }
       }
     }
+  }
+}
+
+.pagination{
+  @include fontText;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+  margin: 5vw auto;
+  color: $fontColorOnGreen;
+
+  a{
+    text-decoration: none;
+    color: $fontColorOnGreen;
+    font-weight: bold;
+  }
+
+  li{
+    background-color: $primaryColor;
+    border-radius: 30px;
+    padding: 2vw 3vw;
+    margin: 0 1vw;
   }
 }
 
