@@ -17,10 +17,8 @@
 <meta name="author" content="Udgiver">
 <meta name="copyright" content="Information om copyright">
 <meta name="description" content="Free Web tutorials">
-<meta name="keywords" content="HTML,CSS,XML,JavaScript">
 
 <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
-<link href="css/styles.css" rel="stylesheet" type="text/css">
 
 <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,12 +35,18 @@
 
 <meta property="og:locale" content="da_DK" >
 
+    <?php
+    require ("php/head.php");
+    ?>
 
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
 <body>
 
+<?php
+require ("php/header.php");
+?>
 
 <main class="myAccount">
 
@@ -74,34 +78,62 @@
            </p>
        </div>
     </div
+
+        <br><br>
+
 </div>
 
-   <button class="myButtonedit">Ret Mine Oplysninger</button>
+   <button class="myButtonedit">
+      <p>Ret</p>
+   </button>
 
-
+<br><br>
   <button class="myPassword">Ændre Mit Password</button>
+
+    <br>
+
 
 <div class="myInputbox">
 
-    <label class="container">
+    <label class="myContainer">
         <input type="checkbox">
         <span class="checkmark"></span>
     </label>
 
-<button class="Nyhedsbrev">Tilmeld Dig Nyhedsbrevet</button>
 
+    <br>
+
+<button class="Nyhedsbrev">Tilmeld Dig Nyhedsbrev</button>
 </div>
+
+<br>
 
     <div class="myDropdownBox">
 
         <div class="myOrders">
-            Ordrehistorik
+           <p>
+               Ordrehistorik
+           </p>
         </div>
 
         <div class="myHistory">
             <ul>
-                <li>hej</li>
-                <li>farvel</li>
+                <li>
+                    Ordrenummer. 13122409 <br>
+                    Dato: 24-09-18 <br>
+                    Produkt Protein Nutrition <br> <br>
+                </li>
+                <li>
+                    Ordrenummer. 50132410 <br>
+                    Dato: 01-07-18 <br>
+                    Produkt Protein Nutrition <br> <br>
+                </li>
+
+                <li>
+                    Ordrenummer. 90008320 <br>
+                    Dato: 20-03-18 <br>
+                    Produkt Protein Nutrition <br> <br>
+                </li>
 
             </ul>
 
@@ -111,6 +143,9 @@
 
 </main>
 
+<?php
+require ("php/footer.php");
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -118,6 +153,9 @@
 $(document).ready(function(e) {
     // Din kode her
 
+    $('.myOrders').click(function () {
+        $('.myHistory').toggle("slow")
+    })
 
 });
 </script>

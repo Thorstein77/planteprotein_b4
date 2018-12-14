@@ -39,22 +39,22 @@
 
 <meta property="og:locale" content="da_DK" >
 
+    <?php
+    require ("php/head.php");
+    ?>
 
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
 <body>
+
 <?php
 require ("php/header.php");
 ?>
 
 
 
-
-
 <main class="blogContent">
-
-    <div class="blogSearchcontent"></div>
 
 
 
@@ -64,6 +64,17 @@ require ("php/header.php");
     </h1>
 </div>
 
+    <div class="blogSearchcontent">
+
+        <div class="searchBlog">
+            <input placeholder="Søg i Blogs">
+
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+    </div>
 
 
 <div class="blogInfobox">
