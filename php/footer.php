@@ -68,4 +68,34 @@
             </a>
         </div>
     </div>
+
+    <div class="payment">
+        <div class="paymentImg" id="dan">
+            <img src="images/icons/dankort.png">
+        </div>
+
+        <div class="paymentImg">
+            <img src="images/icons/visa.png">
+        </div>
+
+        <div class="paymentImg">
+            <img src="images/icons/visaElectron.png">
+        </div>
+
+        <div class="paymentImg">
+            <img src="images/icons/masterCard.png">
+        </div>
+
+        <div class="paymentImg" id="mcd">
+            <img src="images/icons/masterCardDebit.png">
+        </div>
+
+        <div class="paymentImg">
+            <img src="images/icons/mobilePay.png">
+        </div>
+
+        <div class="paymentImg" id="emaerke">
+            <img src="images/icons/emaerke.png">
+        </div>
+    </div>
 </footer>
