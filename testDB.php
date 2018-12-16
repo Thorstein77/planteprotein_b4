@@ -59,7 +59,7 @@ require ("db/db.php");
         <button class="productsFilter">Filtrer</button>
 
         <div class="productsSearch">
-            <form class="grid" method="post" action="testDB.php">
+            <form class="grid" method="get" action="testDB.php">
                 <div id="gridItem1">
                     <h3>Type</h3>
 
@@ -80,23 +80,23 @@ require ("db/db.php");
 
                     <ul>
                         <li>
-                            <input type="checkbox" value="vanilla" name="taste[]">
+                            <input type="checkbox" value="vani" name="taste[]">
                             Vanilje
                         </li>
                         <li>
-                            <input type="checkbox" value="chocolate" name="taste[]">
+                            <input type="checkbox" value="Choc" name="taste[]">
                             Chokolade
                         </li>
                         <li>
-                            <input type="checkbox" value="neutral" name="taste[]">
+                            <input type="checkbox" value="neut" name="taste[]">
                             Neutral
                         </li>
                         <li>
-                            <input type="checkbox" value="berry" name="taste[]">
+                            <input type="checkbox" value="ber" name="taste[]">
                             Bær
                         </li>
                         <li>
-                            <input type="checkbox" value="coconut" name="taste[]">
+                            <input type="checkbox" value="coco" name="taste[]">
                             Kokos
                         </li>
                     </ul>
@@ -176,24 +176,34 @@ require ("db/db.php");
     $prevPage = ($pagenum -1);
     $nextPage = ($pagenum + 1);
 
-    if(isset($_POST["submit"])){
-        $filter = '';
-        if(isset($_POST['brand'])){
-            $brand = $_POST['brand'];
-            $bCount = count($brand);
-            $i = 1;
-            $filter .= "WHERE pBrand = ";
+    if(isset($_GET["submit"])){
+        if(isset($_GET['taste'])){
+            $taste = $_GET['taste'];
+            $tPId = array();
+            foreach($taste as $value){
+                $var = mysqli_real_escape_string($db, $value);
+                $pResult = mysqli_query($db, "SELECT * FROM taste WHERE tName LIKE '%$var%'");
+                while($data = mysqli_fetch_assoc($pResult)){
+                    array_push($tPId, $data['tPId']);
+                }
+            }
 
-            foreach($brand as $value){
-                $filter .= "'".$value."'";
-                if($i < $bCount){
-                    $filter .= " OR ";
+            $pId = array_unique($tPId);
+            $pCount = count($pId);
+            $i = 1;
+            $pFilter = " pId = ";
+
+            foreach($pId as $value){
+                $pFilter .= "'".$value."'";
+                if($i < $pCount){
+                    $pFilter .= " OR pId = ";
                 }
                 $i++;
             }
+
+            print_r($pId);
         }
     }
-
     ?>
 </main>
 
