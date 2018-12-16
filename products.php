@@ -64,23 +64,23 @@ require ("db/db.php");
 
                     <ul>
                         <li>
-                            <input type="checkbox" value="vanilla" name="taste[]">
+                            <input type="checkbox" value="vani" name="taste[]">
                             Vanilje
                         </li>
                         <li>
-                            <input type="checkbox" value="chocolate" name="taste[]">
+                            <input type="checkbox" value="choc" name="taste[]">
                             Chokolade
                         </li>
                         <li>
-                            <input type="checkbox" value="neutral" name="taste[]">
+                            <input type="checkbox" value="neut" name="taste[]">
                             Neutral
                         </li>
                         <li>
-                            <input type="checkbox" value="berry" name="taste[]">
+                            <input type="checkbox" value="ber" name="taste[]">
                             Bær
                         </li>
                         <li>
-                            <input type="checkbox" value="coconut" name="taste[]">
+                            <input type="checkbox" value="coco" name="taste[]">
                             Kokos
                         </li>
                     </ul>
@@ -170,7 +170,7 @@ require ("db/db.php");
                 $brand = $_GET['brand'];
                 $bCount = count($brand);
                 $i = 1;
-                $bFilter = " pBrand = ";
+                $bFilter = "pBrand = ";
 
                 foreach($brand as $value){
                     $var = mysqli_real_escape_string($db, $value);
@@ -186,13 +186,38 @@ require ("db/db.php");
                 $type = $_GET['type'];
                 $tCount = count($type);
                 $i = 1;
-                $tFilter = " pType = ";
+                $tFilter = "pType = ";
 
                 foreach($type as $value){
                     $var = mysqli_real_escape_string($db, $value);
                     $tFilter .= "'".$var."'";
                     if($i < $tCount){
                         $tFilter .= " OR pType = ";
+                    }
+                    $i++;
+                }
+            }
+
+            if(isset($_GET['taste'])){
+                $taste = $_GET['taste'];
+                $tPId = array();
+                foreach($taste as $value){
+                    $var = mysqli_real_escape_string($db, $value);
+                    $pResult = mysqli_query($db, "SELECT * FROM taste WHERE tName LIKE '%$var%'");
+                    while($data = mysqli_fetch_assoc($pResult)){
+                        array_push($tPId, $data['tPId']);
+                    }
+                }
+
+                $pId = array_unique($tPId);
+                $pCount = count($pId);
+                $i = 1;
+                $tasteFilter = "pId = ";
+
+                foreach($pId as $value){
+                    $tasteFilter .= "'".$value."'";
+                    if($i < $pCount){
+                        $tasteFilter .= " OR pId = ";
                     }
                     $i++;
                 }
@@ -211,13 +236,28 @@ require ("db/db.php");
             $tFilter = '';
         }
 
-        $filterFinal = '';
-        if($bFilter != '' && $tFilter != ''){
-            $filterFinal = "WHERE".$bFilter." AND ".$tFilter;
+        if (isset($tasteFilter)){
+
+        }else{
+            $tasteFilter = '';
+        }
+
+        if($bFilter != '' && $tFilter != '' && $tasteFilter != ''){
+            $filterFinal = "WHERE (".$bFilter.") AND (".$tFilter.") AND (".$tasteFilter.")";
+        }elseif ($bFilter != '' && $tFilter != ''){
+            $filterFinal = "WHERE (".$bFilter.") AND (".$tFilter.")";
+        }elseif ($bFilter != '' && $tasteFilter != ''){
+            $filterFinal = "WHERE (".$bFilter.") AND (".$tasteFilter.")";
+        }elseif ($tFilter != '' && $tasteFilter != ''){
+            $filterFinal = "WHERE (".$tFilter.") AND (".$tasteFilter.")";
         }elseif ($bFilter != ''){
-            $filterFinal = "WHERE".$bFilter;
+            $filterFinal = "WHERE ".$bFilter;
         }elseif ($tFilter != ''){
-            $filterFinal = "WHERE".$tFilter;
+            $filterFinal = "WHERE ".$tFilter;
+        }elseif ($tasteFilter != ''){
+            $filterFinal = "WHERE ".$tasteFilter;
+        }else{
+            $filterFinal = '';
         }
 
         if(isset($_GET['brand'])){
@@ -227,10 +267,6 @@ require ("db/db.php");
                 $var = mysqli_real_escape_string($db, $value);
                 $brandPage .= "&brand%5B%5D=".$var;
             }
-        }
-
-        if (isset($brandPage)){
-
         }else{
             $brandPage = '';
         }
@@ -242,15 +278,22 @@ require ("db/db.php");
                 $var = mysqli_real_escape_string($db, $value);
                 $typePage .= "&type%5B%5D=".$var;
             }
-        }
-
-        if (isset($typePage)){
-
         }else{
             $typePage = '';
         }
 
-        $filterPage = $brandPage.$typePage."&submit=";
+        if(isset($_GET['taste'])){
+            $tastePage = '';
+            $taste = $_GET['taste'];
+            foreach ($taste as $value){
+                $var = mysqli_real_escape_string($db, $value);
+                $tastePage .= "&taste%5B%5D=".$var;
+            }
+        }else{
+            $tastePage = '';
+        }
+
+        $filterPage = $brandPage.$typePage.$tastePage."&submit=";
 
         $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products $filterFinal");
         $totalProducts = mysqli_fetch_array($resultCount);
