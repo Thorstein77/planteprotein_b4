@@ -384,6 +384,7 @@ nav {
   padding-top: 5vw;
 
 
+
 img {
   width: 40%;
   height: auto;
@@ -642,7 +643,7 @@ ul ul {
 
       .grid{
         display: grid;
-        grid-template: 40vw 40vw / 47.5% 5% 47.5%;
+        grid-template: 40vw 40vw 10vw / 47.5% 5% 47.5%;
         margin: 5vw 5%;
 
         ul{
@@ -668,6 +669,15 @@ ul ul {
 
         #gridItem4{
           grid-area: 2 / 3 / 3 / 4;
+        }
+
+        #gridItem5{
+          grid-area: 3 / 1 / 4 / 4;
+          margin: 0 auto;
+        }
+
+        button{
+          @include buttonGreen;
         }
       }
     }
@@ -912,13 +922,13 @@ ul ul {
     display: grid;
     grid-row: 4 / span 1;
     padding: 20px 0;
-
     grid-template-rows: auto auto;
 
     .productDescriptionIkoner{
       display: flex;
       justify-content: space-evenly;
       padding: 40px 10%;
+      height: 130px;
 
       img{
         max-width: 50px;
@@ -1205,7 +1215,6 @@ header {
   width: 100%;
   grid-template-rows: auto auto;
   grid-template-columns: 15% 30% auto;
-
 
   .headerLogo{
     z-index: 10;
@@ -1505,7 +1514,7 @@ header {
     max-width: 1920px;
     margin: 0 auto;
     display: grid;
-    grid-template: 100px 100px 2500px / 25% 70%;
+    grid-template: 100px 100px 2550px / 25% 70%;
     grid-column-gap: 5%;
 
     h1{
@@ -1566,7 +1575,7 @@ header {
       grid-area: 3 / 2 / 4 / 3;
 
       display: grid;
-      grid-template: 1fr 1fr 1fr 35px / 30% 30% 30%;
+      grid-template: 1fr 1fr 1fr 85px / 30% 30% 30%;
       grid-column-gap: 5%;
 
       #paginationGrid{
@@ -1599,81 +1608,46 @@ header {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          .gradient{
-            opacity: 0;
-            transition: opacity;
-            -moz-transition: opacity;
-            -webkit-transition: opacity;
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-          }
 
           h3{
             padding: 0;
           }
 
           .price{
-            display: flex;
-            justify-content: space-around;
             padding: 0;
 
-            .icons{
-              opacity: 0;
-              display: flex;
-              transition: opacity;
-              -moz-transition: opacity;
-              -webkit-transition: opacity;
-              justify-content: flex-start;
-              align-items: center;
-              width: 50%;
-              overflow: hidden;
-
-
-              .iconImg{
-                width: 20%;
-                margin-right: 5%;
-              }
-            }
-
             p{
-              position: absolute;
-              top: auto;
-              bottom: auto;
-              left: auto;
-              right: auto;
-
-              font-size: 35px;
-              font-weight: bold;
-              color: $fontColor;
+              bottom: 0;
             }
           }
         }
 
-        .inView{
-          .gradient{
-            opacity: 1;
-            background-image: linear-gradient(white, $primaryColor);
-            transition: opacity 2s ease-in-out;
-            -moz-transition: opacity 2s ease-in-out;
-            -webkit-transition: opacity 2s ease-in-out;
-          }
+        a:hover{
+          .info{
+            position: relative;
 
-          .price {
-            .icons {
+            .gradient{
               opacity: 1;
+              background-image: linear-gradient(white, $primaryColor);
               transition: opacity 2s ease-in-out;
               -moz-transition: opacity 2s ease-in-out;
               -webkit-transition: opacity 2s ease-in-out;
             }
 
-            p {
-              position: relative;
-              font-size: 35px;
-              color: $fontColorOnGreen;
+            .price {
+
+              .icons {
+                opacity: 1;
+                transition: opacity 2s ease-in-out;
+                -moz-transition: opacity 2s ease-in-out;
+                -webkit-transition: opacity 2s ease-in-out;
+              }
+
+              p {
+                position: relative;
+                font-size: 45px;
+                color: $fontColorOnGreen;
+              }
             }
           }
         }
@@ -1687,7 +1661,7 @@ header {
 
   .pagination{
     width: 100%;
-    margin: 0;
+    margin: 0 0 50px 0;
 
     li{
       padding: 4px 12px;
