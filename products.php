@@ -27,7 +27,7 @@ require ("db/db.php");
         Hos Plante-protein.dk er alle produkter 100% veganske. Du kan
         være helt rolig mens du kigger på vores udvalg. Derudover
         er alle produkter markeret med et ikon der viser om de er
-        glutenfri, laktosefri eller økologiske.
+        gluten-, soya- eller laktosefri, og om de er økologiske.
     </p>
 
     <aside>
