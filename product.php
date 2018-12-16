@@ -44,21 +44,45 @@
 
 <?php
 require ("php/header.php");
+require ("db/db.php");
+
+$pId = mysqli_real_escape_string($db, $_GET["pid"]);
+$result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
+$pData = mysqli_fetch_assoc($result);
+
+$result = mysqli_query($db, "SELECT * FROM images WHERE iPId = '$pId'");
+$img = mysqli_fetch_assoc($result);
+
+$tResult = mysqli_query($db, "SELECT * FROM taste WHERE tPId = '$pId'");
+
+$wResult = mysqli_query($db, "SELECT * FROM weight WHERE wPId = '$pId'");
+
+$pResult = mysqli_query($db, "SELECT wPrice FROM weight WHERE wPId = '$pId'");
+$priceData = mysqli_fetch_assoc($pResult);
+
 ?>
 
 <main class="product">
 
-    <h1 class="productName">Vega Protein & Greens proteinpulver</h1>
+    <h1 class="productName">
+        <?php
+        echo $pData['pBrand']." ".$pData['pName'];
+        ?>
+    </h1>
 
 
     <div class="productPic">
-        <img src="images/productImages/vega-protein-greens-proteinpulver.png">
+        <img src="<?php echo $img['iLink']; ?>">
     </div>
 
 
     <div class="productInfo">
 
-        <p>375,-</p>
+        <p id="productPagePrice">
+            <?php
+            echo $priceData['wPrice'];
+            ?>
+        </p>
 
         <div class="productInfoFormularer">
 
@@ -67,27 +91,24 @@ require ("php/header.php");
                 <h3>Smag</h3>
 
                 <ul>
-
-                    <li>
-                        <input type="checkbox">
-                        Bær
-                    </li>
-
-                    <li>
-                        <input type="checkbox">
-                        Vanilje
-                    </li>
-
-                    <li>
-                        <input type="checkbox">
-                        Chokolade
-                    </li>
-
-                    <li>
-                        <input type="checkbox">
-                        Kokos mandel
-                    </li>
-
+                    <?php
+                    $tI = 1;
+                    while ($tData = mysqli_fetch_assoc($tResult)){
+                        ?>
+                        <li>
+                            <input type="radio" name="taste"
+                                    <?php
+                                    if($tI == 1){
+                                        echo "checked='checked'";
+                                    }
+                                    ?>
+                                   value="<?php echo $tData['tName'] ?>">
+                            <?php echo $tData['tName'] ?>
+                        </li>
+                        <?php
+                        $tI++;
+                    }
+                    ?>
                 </ul>
 
             </div>
@@ -99,17 +120,24 @@ require ("php/header.php");
                 <h3>Gram</h3>
 
                 <ul>
-
-                    <li>
-                        <input type="checkbox">
-                        760 gram
-                    </li>
-
-                    <li>
-                        <input type="checkbox">
-                        518 gram
-                    </li>
-
+                    <?php
+                    $wI = 1;
+                    while ($wData = mysqli_fetch_assoc($wResult)){
+                        ?>
+                        <li>
+                            <input type="radio" name="weight"
+                                   <?php
+                                   if($wI == 1){
+                                       echo "checked='checked'";
+                                   }
+                                   ?>
+                                   value="<?php echo $wData['wPrice'] ?>">
+                            <?php echo $wData['wAmount'] ?>
+                        </li>
+                        <?php
+                        $wI++;
+                    }
+                    ?>
                 </ul>
 
             </div>
@@ -126,29 +154,51 @@ require ("php/header.php");
         <div class="productDescriptionDescription">
 
             <p><b>Beskrivelse:</b></p>
-            <p>Tilføj let mere plantebaseret ernæring til din dag med
-            Vega® Protein & Greens.
-            <br>
-            Vega Protein & Greens er fremstillet med ægte
-            plantebaserede fødevareingredienser og er mere end
-            blot en proteinshake.
-
+            <p>
+                <?php
+                echo $pData['pDesc'];
+                ?>
+            </p>
             <br><br>
-
-            20 gram plantebaseret protein
-            <br>
-            Grøntsager
-            <br>
-            110-120 kalorier
-            <br>
-            0-1 gram sukker</p>
+            <img src="<?php echo $pData['pContent'] ?>">
 
         </div>
 
         <div class="productDescriptionIkoner">
-            <img src="images/icons/gluten.png">
-            <img src="images/icons/soy.png">
-            <img src="images/icons/lactose.png">
+            <?php
+            if($pData["pGluten"] == 'Yes'){
+                ?>
+                <div class="iconImg">
+                    <img src="images/icons/gluten.png">
+                </div>
+                <?php
+            }
+
+            if($pData["pSoy"] == 'Yes'){
+                ?>
+                <div class="iconImg">
+                    <img src="images/icons/soy.png">
+                </div>
+                <?php
+            }
+
+            if($pData["pLactose"] == 'Yes') {
+                ?>
+                <div class="iconImg">
+                    <img src="images/icons/lactose.png">
+                </div>
+                <?php
+            }
+
+            if($pData["pOrganic"] == 'Yes') {
+                ?>
+
+                <div class="iconImg">
+                    <img src="images/icons/organic.png">
+                </div>
+                <?php
+            }
+            ?>
         </div>
 
     </div>
@@ -177,6 +227,11 @@ require ("php/footer.php");
 <script>
     $(document).ready(function (e) {
         // Din kode her
+        var price = null;
+        $("input[name='weight']").click(function() {
+            price = this.value;
+            $("#productPagePrice").html(price);
+        });
     });
 </script>
 </body>

@@ -43,18 +43,18 @@ require ("db/db.php");
         <button class="productsFilter">Filtrer</button>
 
         <div class="productsSearch">
-            <div class="grid">
+            <form class="grid" method="get" action="products.php">
                 <div id="gridItem1">
                     <h3>Type</h3>
 
                     <ul>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="proteinpulver" name="type[]">
                             Proteinpulver
                         </li>
                         <li>
-                            <input type="checkbox">
-                            Proteinpulver
+                            <input type="checkbox" value="proteinbar" name="type[]">
+                            Proteinbar
                         </li>
                     </ul>
                 </div>
@@ -64,23 +64,23 @@ require ("db/db.php");
 
                     <ul>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="vanilla" name="taste[]">
                             Vanilje
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="chocolate" name="taste[]">
                             Chokolade
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="neutral" name="taste[]">
                             Neutral
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="berry" name="taste[]">
                             Bær
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="coconut" name="taste[]">
                             Kokos
                         </li>
                     </ul>
@@ -91,23 +91,23 @@ require ("db/db.php");
 
                     <ul>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="multipower" name="brand[]">
                             Multipower
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="the protein works" name="brand[]">
                             The Protein Works
                         </li>
                         <li>
-                            <input type="checkbox">
-                            Scitech Nutrition
+                            <input type="checkbox" value="Scitec Nutrition" name="brand[]">
+                            Scitec Nutrition
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="gymqueen" name="brand[]">
                             GymQueen
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="plantforce" name="brand[]">
                             Plantforce
                         </li>
                     </ul>
@@ -118,25 +118,34 @@ require ("db/db.php");
 
                     <ul>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="rawfusion" name="brand[]">
                             Rawfusion
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="sunwarrior" name="brand[]">
                             SunWarrior
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="hej" name="brand[]">
                             Hej Neutral
                         </li>
                         <li>
-                            <input type="checkbox">
+                            <input type="checkbox" value="vega" name="brand[]">
                             Vega
                         </li>
-
+                        <li>
+                            <input type="checkbox" value="all stars" name="brand[]">
+                            All Stars
+                        </li>
                     </ul>
                 </div>
-            </div>
+
+                <div id="gridItem5">
+                    <button type="submit" name="submit">
+                        Filtrer
+                    </button>
+                </div>
+            </form>
         </div>
     </aside>
 
@@ -148,6 +157,7 @@ require ("db/db.php");
         }else{
             $pagenum = 1;
         }
+
         // hvor mange produkter vi vil se per side
         $totalProductsPerPage = 3;
         // beregner hvor mange produkter der skal 'springes over'
@@ -155,13 +165,100 @@ require ("db/db.php");
         $prevPage = ($pagenum -1);
         $nextPage = ($pagenum + 1);
 
-        $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products");
+        if(isset($_GET["submit"])){
+            if(isset($_GET['brand'])){
+                $brand = $_GET['brand'];
+                $bCount = count($brand);
+                $i = 1;
+                $bFilter = " pBrand = ";
+
+                foreach($brand as $value){
+                    $var = mysqli_real_escape_string($db, $value);
+                    $bFilter .= "'".$var."'";
+                    if($i < $bCount){
+                        $bFilter .= " OR pBrand = ";
+                    }
+                    $i++;
+                }
+            }
+
+            if(isset($_GET['type'])){
+                $type = $_GET['type'];
+                $tCount = count($type);
+                $i = 1;
+                $tFilter = " pType = ";
+
+                foreach($type as $value){
+                    $var = mysqli_real_escape_string($db, $value);
+                    $tFilter .= "'".$var."'";
+                    if($i < $tCount){
+                        $tFilter .= " OR pType = ";
+                    }
+                    $i++;
+                }
+            }
+        }
+
+        if (isset($bFilter)){
+
+        }else{
+            $bFilter = '';
+        }
+
+        if (isset($tFilter)){
+
+        }else{
+            $tFilter = '';
+        }
+
+        $filterFinal = '';
+        if($bFilter != '' && $tFilter != ''){
+            $filterFinal = "WHERE".$bFilter." AND ".$tFilter;
+        }elseif ($bFilter != ''){
+            $filterFinal = "WHERE".$bFilter;
+        }elseif ($tFilter != ''){
+            $filterFinal = "WHERE".$tFilter;
+        }
+
+        if(isset($_GET['brand'])){
+            $brandPage = '';
+            $brand = $_GET['brand'];
+            foreach ($brand as $value){
+                $var = mysqli_real_escape_string($db, $value);
+                $brandPage .= "&brand%5B%5D=".$var;
+            }
+        }
+
+        if (isset($brandPage)){
+
+        }else{
+            $brandPage = '';
+        }
+
+        if(isset($_GET['type'])){
+            $typePage = '';
+            $type = $_GET['type'];
+            foreach ($type as $value){
+                $var = mysqli_real_escape_string($db, $value);
+                $typePage .= "&type%5B%5D=".$var;
+            }
+        }
+
+        if (isset($typePage)){
+
+        }else{
+            $typePage = '';
+        }
+
+        $filterPage = $brandPage.$typePage."&submit=";
+
+        $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products $filterFinal");
         $totalProducts = mysqli_fetch_array($resultCount);
         $totalProducts = $totalProducts['totalProducts'];
         $totalNumOfPages = ceil($totalProducts / $totalProductsPerPage);
         $secondLast = ($totalNumOfPages - 1);
 
-        $result = mysqli_query($db, "SELECT * FROM products LIMIT $offset, $totalProductsPerPage");
+        $result = mysqli_query($db, "SELECT * FROM products $filterFinal LIMIT $offset, $totalProductsPerPage");
 
         while($row = mysqli_fetch_array($result)) {
             $pId = $row["pId"];
@@ -270,12 +367,12 @@ require ("db/db.php");
 
         <ul class="pagination">
             <?php if($pagenum > 1){
-                echo "<li><a href='?pagenum=1'>First</a></li>";
+                echo "<li><a href='?pagenum=1".$filterPage."'>First</a></li>";
             } ?>
 
             <li <?php if($pagenum <= 1){ echo "class='disabled'"; } ?>>
                 <a <?php if($pagenum > 1){
-                    echo "href='?pagenum=".$prevPage."'";
+                    echo "href='?pagenum=".$prevPage.$filterPage."'";
                 } ?>>Prev</a>
             </li>
 
@@ -283,12 +380,12 @@ require ("db/db.php");
                 echo "class='disabled'";
             } ?>>
                 <a <?php if($pagenum < $totalNumOfPages) {
-                    echo "href='?pagenum=".$nextPage."'";
+                    echo "href='?pagenum=".$nextPage.$filterPage."'";
                 } ?>>Next</a>
             </li>
 
             <?php if($pagenum < $totalNumOfPages){
-                echo "<li><a href='?pagenum=".$totalNumOfPages."'>Last</a></li>";
+                echo "<li><a href='?pagenum=".$totalNumOfPages.$filterPage."'>Last</a></li>";
             } ?>
         </ul>
 
@@ -300,7 +397,7 @@ require ("db/db.php");
                     if ($counter == $pagenum) {
                         echo "<li class='active'><a>".$counter."</a></li>";
                     }else{
-                        echo "<li><a href='?pagenum=".$counter."'>".$counter."</a></li>";
+                        echo "<li><a href='?pagenum=".$counter.$filterPage."'>".$counter."</a></li>";
                     }
                 }
             }
@@ -327,13 +424,13 @@ require ("db/db.php");
         $prevPage = ($pagenum -1);
         $nextPage = ($pagenum + 1);
 
-        $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products");
+        $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products $filterFinal");
         $totalProducts = mysqli_fetch_array($resultCount);
         $totalProducts = $totalProducts['totalProducts'];
         $totalNumOfPages = ceil($totalProducts / $totalProductsPerPage);
         $secondLast = ($totalNumOfPages - 1);
 
-        $result = mysqli_query($db, "SELECT * FROM products LIMIT $offset, $totalProductsPerPage");
+        $result = mysqli_query($db, "SELECT * FROM products $filterFinal LIMIT $offset, $totalProductsPerPage");
 
         while($row = mysqli_fetch_array($result)) {
             $pId = $row["pId"];
@@ -442,12 +539,12 @@ require ("db/db.php");
 
         <ul class="pagination" id="paginationGrid">
             <?php if($pagenum > 1){
-                echo "<li><a href='?pagenum=1'>First</a></li>";
+                echo "<li><a href='?pagenum=1".$filterPage."'>First</a></li>";
             } ?>
 
             <li <?php if($pagenum <= 1){ echo "class='disabled'"; } ?>>
                 <a <?php if($pagenum > 1){
-                    echo "href='?pagenum=".$prevPage."'";
+                    echo "href='?pagenum=".$prevPage.$filterPage."'";
                 } ?>>Prev</a>
             </li>
 
@@ -458,7 +555,7 @@ require ("db/db.php");
                     if ($counter == $pagenum) {
                         echo "<li class='active'><a>".$counter."</a></li>";
                     }else{
-                        echo "<li><a href='?pagenum=".$counter."'>".$counter."</a></li>";
+                        echo "<li><a href='?pagenum=".$counter.$filterPage."'>".$counter."</a></li>";
                     }
                 }
             }
@@ -469,12 +566,12 @@ require ("db/db.php");
                 echo "class='disabled'";
             } ?>>
                 <a <?php if($pagenum < $totalNumOfPages) {
-                    echo "href='?pagenum=".$nextPage."'";
+                    echo "href='?pagenum=".$nextPage.$filterPage."'";
                 } ?>>Next</a>
             </li>
 
             <?php if($pagenum < $totalNumOfPages){
-                echo "<li><a href='?pagenum=".$totalNumOfPages."'>Last</a></li>";
+                echo "<li><a href='?pagenum=".$totalNumOfPages.$filterPage."'>Last</a></li>";
             } ?>
         </ul>
     </section>
@@ -488,33 +585,43 @@ require ("php/footer.php");
 
 <script type="text/javascript">
 
-    var $animateInfo = $('.info');
-    var $window = $(window);
+    $(document).ready(function(){
+        var $window = $(window);
 
-    $window.on('scroll resize', checkIfOnScreen);
-    $window.trigger('scroll');
+        function checkWidth() {
+            var windowsize = $window.width();
+            if (windowsize < 992){
+                var $animateInfo = $('.info');
 
-    function checkIfOnScreen(){
-        var windowHeight = $window.height();
-        var windowTopPosition = $window.scrollTop();
-        var windowBottomPosition = (windowTopPosition + windowHeight);
+                $window.on('scroll resize', checkIfOnScreen);
+                $window.trigger('scroll');
 
-        $.each($animateInfo, function () {
+                function checkIfOnScreen(){
+                    var windowHeight = $window.height();
+                    var windowTopPosition = $window.scrollTop();
+                    var windowBottomPosition = (windowTopPosition + windowHeight);
 
-            var $object = $(this);
-            var objectHeight = $object.outerHeight();
-            var objectTopPosition = $object.offset().top;
-            var objectBottomPosition = (objectTopPosition + objectHeight);
+                    $.each($animateInfo, function () {
 
-            // check if object is in view
-            if((objectBottomPosition >= windowTopPosition) &&
-                (objectTopPosition <= windowBottomPosition)){
-                $object.addClass('inView');
-            }else{
-                $object.removeClass('inView');
+                        var $object = $(this);
+                        var objectHeight = $object.outerHeight();
+                        var objectTopPosition = $object.offset().top;
+                        var objectBottomPosition = (objectTopPosition + objectHeight);
+
+                        // check if object is in view
+                        if((objectBottomPosition >= windowTopPosition) &&
+                            (objectTopPosition <= windowBottomPosition)){
+                            $object.addClass('inView');
+                        }else{
+                            $object.removeClass('inView');
+                        }
+                    });
+                }
             }
-        });
-    }
+        }
+        checkWidth();
+        $(window).resize(checkWidth);
+    });
 
     $('.productsFilter').click(function () {
         $('.productsSearch').toggle("slow")

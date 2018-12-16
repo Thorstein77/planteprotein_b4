@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2018 at 05:58 PM
+-- Generation Time: Dec 16, 2018 at 07:53 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -90,7 +90,7 @@ INSERT INTO `images` (`iId`, `iPId`, `iLink`, `iAlt`) VALUES
 (25, 7, 'images/productImages/plantforce-synergy-protein(2).jpg', 'Plantforce Synergy Protein, vegansk proteinpulver'),
 (26, 7, 'images/productImages/plantforce-synergy-protein(3).jpg', 'Plantforce Synergy Protein, vegansk proteinpulver'),
 (27, 8, 'images/productImages/vegan-protein-extreme.jpg', 'Vegan Protein Extreme, vegansk proteinpulver'),
-(28, 9, 'images/productImages/rawfusion-complete-vegansk-proteinpulver-med-superfoods(2).png', 'Rawfusion Complete - vegansk proteinpulver med superfoods'),
+(28, 9, 'images/productImages/rawfusion-complete-vegansk-proteinpulver-med-superfoods(2).jpg', 'Rawfusion Complete - vegansk proteinpulver med superfoods'),
 (29, 9, 'images/productImages/rawfusion-complete-vegansk-proteinpulver-med-superfoods.png', 'Rawfusion Complete - vegansk proteinpulver med superfoods'),
 (30, 9, 'images/productImages/rawfusion-complete-vegansk-proteinpulver-med-superfoods(1).png', 'Rawfusion Complete - vegansk proteinpulver med superfoods'),
 (31, 9, 'images/productImages/rawfusion-complete-vegansk-proteinpulver-med-superfoods(3).png', 'Rawfusion Complete - vegansk proteinpulver med superfoods'),
