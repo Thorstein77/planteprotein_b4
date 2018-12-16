@@ -1524,7 +1524,7 @@ header {
     }
 
     .productText{
-      width: 90%;
+      width: 60%;
       margin: 0;
       grid-area: 2 / 2 / 3 / 3;
     }
@@ -1559,6 +1559,10 @@ header {
 
         .grid{
           display: block;
+
+          #gridItem1, #gridItem2, #gridItem3, #gridItem5{
+            margin-top: 15px;
+          }
         }
       }
     }
