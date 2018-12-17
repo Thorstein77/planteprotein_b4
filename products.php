@@ -359,7 +359,7 @@ require ("db/db.php");
                                 if($row["pGluten"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/gluten.png">
+                                        <img src="images/icons/gluten.png" alt="Gluten fri">
                                     </div>
                                     <?php
                                 }
@@ -367,7 +367,7 @@ require ("db/db.php");
                                 if($row["pSoy"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/soy.png">
+                                        <img src="images/icons/soy.png" alt="Soya fri">
                                     </div>
                                     <?php
                                 }
@@ -375,7 +375,7 @@ require ("db/db.php");
                                 if($row["pLactose"] == 'Yes') {
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/lactose.png">
+                                        <img src="images/icons/lactose.png" alt="Lactose fri">
                                     </div>
                                     <?php
                                 }
@@ -384,7 +384,7 @@ require ("db/db.php");
                                     ?>
 
                                     <div class="iconImg">
-                                        <img src="images/icons/organic.png">
+                                        <img src="images/icons/organic.png" alt="Økologisk">
                                     </div>
                                     <?php
                                 }
@@ -531,7 +531,7 @@ require ("db/db.php");
                                 if($row["pGluten"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/gluten.png">
+                                        <img src="images/icons/gluten.png" alt="Gluten fri">
                                     </div>
                                     <?php
                                 }
@@ -539,7 +539,7 @@ require ("db/db.php");
                                 if($row["pSoy"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/soy.png">
+                                        <img src="images/icons/soy.png" alt="Soya fri">
                                     </div>
                                     <?php
                                 }
@@ -547,7 +547,7 @@ require ("db/db.php");
                                 if($row["pLactose"] == 'Yes') {
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/lactose.png">
+                                        <img src="images/icons/lactose.png" alt="Lactose fri">
                                     </div>
                                     <?php
                                 }
@@ -556,7 +556,7 @@ require ("db/db.php");
                                     ?>
 
                                     <div class="iconImg">
-                                        <img src="images/icons/organic.png">
+                                        <img src="images/icons/organic.png" alt="Økologisk">
                                     </div>
                                     <?php
                                 }
@@ -627,7 +627,7 @@ require ("php/footer.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script>
 
     $(document).ready(function(){
         var $window = $(window);
