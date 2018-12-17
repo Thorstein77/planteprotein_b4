@@ -5,27 +5,39 @@
     </div>
 
     <div class="headerLogo">
-        <a href="index.php"><img src="images/LogoHvid.png"></a>
+        <a href="index.php"><img src="images/LogoHvid.png" alt="logo, plante-protein"></a>
     </div>
 
 
     <nav>
 
         <label for="drop" class="toggle">
-            <img src="images/Burger.png">
+            <img src="images/Burger.png" alt="menu">
         </label>
 
         <input type="checkbox" id="drop" />
 
         <ul class="menu">
-            <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="products.php">Produkter</a></li>
-            <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="blog.php">Blog</a></li>
-            <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="customerservice.php">Kundeservice</a></li>
-            <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li class="menuLogInd"><a href="userPage.php">Log ind</a></li>
+
+            <li>
+                <hr class="menuHrLinje" noshade="noshade" style="width: 90%;">
+                <a href="products.php">Produkter</a>
+            </li>
+
+            <li>
+                <hr class="menuHrLinje" noshade="noshade" style="width: 90%;">
+                <a href="blog.php">Blog</a>
+            </li>
+
+            <li>
+                <hr class="menuHrLinje" noshade="noshade" style="width: 90%;">
+                <a href="customerservice.php">Kundeservice</a>
+            </li>
+
+            <li class="menuLogInd">
+                <hr class="menuHrLinje" noshade="noshade" style="width: 90%;">
+                <a href="userPage.php">Log ind</a>
+            </li>
         </ul>
     </nav>
 

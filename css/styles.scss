@@ -528,6 +528,7 @@ ul ul {
         color: #f2f2f2;
         margin: 20px 0 20px 0;
         width: 70%;
+        text-align: center;
         a{color: $fontColorOnGreen;}
       }
       .slideButton:hover {
@@ -632,14 +633,14 @@ ul ul {
       margin: 65px 0 60px 5%;
       text-align: center;
       width: 50%;
-      p {
+      h1 {
         @include fontText;
         text-align: center;
         font-weight: bold;
         font-size: 20pt;
         color: $fontColorOnGreen;
       }
-      button {
+      .popular11 {
         @include buttonWhite;
         width: 100%;
         margin-top: 10px;
@@ -1083,7 +1084,7 @@ ul ul {
 
 .kundeservice{
   display: grid;
-  grid-template-rows: 100% auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
   grid-template-columns: auto;
 
   p{
@@ -1633,7 +1634,7 @@ header {
 .kundeservice{
   display: grid;
   width: 900px;
-  grid-template-rows: 100% auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-columns: auto 40%;
   margin: 0 auto;
 
@@ -1724,6 +1725,7 @@ header {
   .blogInfobox{
     margin-left: 200px;
     margin-top: 30px;
+    width: auto;
   }
 
   .blogLink{
