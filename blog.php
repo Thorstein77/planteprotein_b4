@@ -10,9 +10,9 @@
     require ("php/head.php");
     ?>
 
-    <meta property="og:description" content="Beskrivelse" >
+    <meta property="og:description" content="Nemme, proteinrige, veganske opskrifter, ingredienser og meget mere." >
 
-    <title>Sigende titel</title>
+    <title>Blog - plante-protein.dk</title>
 
     <link rel="canonical" href="http://plante-protein.dk/blog.php">
 

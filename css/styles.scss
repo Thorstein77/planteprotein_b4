@@ -476,7 +476,20 @@ ul ul {
   background-image: linear-gradient($primaryColor, transparent);
   height: 15vw;
 }
+  .shoppingCart{
+    display: block;
+    position: relative;
+    height: 5px;
+    width: 100%;
+    grid-area: 3/3/4/4;
 
+    .shoppingIcon{
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      font-size: 30px;
+    }
+  }
 }
 
 // Header - Casper (slut)
@@ -803,6 +816,7 @@ ul ul {
       }
 
       h2, h3{
+        @include fontHeadline;
         text-align: center;
       }
 
@@ -1576,6 +1590,15 @@ header {
     height: 5vw;
   }
 
+  .shoppingCart{
+
+    .shoppingIcon{
+      right: 40px;
+      top: 15px;
+      font-size: 40px;
+    }
+  }
+
 }
 
   // Header - Casper (slut)
@@ -1732,7 +1755,7 @@ header {
     max-width: 1920px;
     margin: 0 auto;
     display: grid;
-    grid-template: 100px 100px 2550px / 25% 70%;
+    grid-template: 100px 100px 2200px / 25% 70%;
     grid-column-gap: 5%;
 
     h1{
@@ -1809,6 +1832,7 @@ header {
         padding: 0;
         margin: 0;
 
+
         h2{
           margin: 0;
           height: 110px;
@@ -1816,17 +1840,18 @@ header {
 
         h3{
           margin-top: 20px;
+          font-size: 17px;
         }
 
         a{
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          height: 650px;
+          height: 500px;
         }
 
         .info{
-          height: 200px;
+          height: 170px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -1851,23 +1876,23 @@ header {
             .gradient{
               opacity: 1;
               background-image: linear-gradient(white, $primaryColor);
-              transition: opacity 2s ease-in-out;
-              -moz-transition: opacity 2s ease-in-out;
-              -webkit-transition: opacity 2s ease-in-out;
+              transition: opacity 1s ease-in-out;
+              -moz-transition: opacity 1s ease-in-out;
+              -webkit-transition: opacity 1s ease-in-out;
             }
 
             .price {
 
               .icons {
                 opacity: 1;
-                transition: opacity 2s ease-in-out;
-                -moz-transition: opacity 2s ease-in-out;
-                -webkit-transition: opacity 2s ease-in-out;
+                transition: opacity 1s ease-in-out;
+                -moz-transition: opacity 1s ease-in-out;
+                -webkit-transition: opacity 1s ease-in-out;
               }
 
               p {
                 position: relative;
-                font-size: 45px;
+                font-size: 40px;
                 color: $fontColorOnGreen;
               }
             }
