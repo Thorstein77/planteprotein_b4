@@ -73,7 +73,7 @@ require ("db/db.php");
                             Chokolade
                         </li>
                         <li>
-                            <input type="checkbox" value="neut" name="taste[]">
+                            <input type="checkbox" value="nat" name="taste[]">
                             Neutral
                         </li>
                         <li>
@@ -496,7 +496,7 @@ require ("db/db.php");
                         ?>
                     </h2>
 
-                    <img src="<?php echo $imgResult['iLink'] ?>" alt="<?php echo $imgResult['iAlt'] ?>">
+                    <img src="<?php echo $imgResult['iLink'] ?>" alt="<?php echo $imgResult['iAlt'] ?>" class="productsImg">
 
                     <div class="info">
 
