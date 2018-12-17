@@ -526,10 +526,12 @@ ul ul {
       .slideButton {
         @include buttonGreen;
         color: #f2f2f2;
-        margin: 20px 0 20px 0;
+        margin: 20px auto;
         width: 70%;
         text-align: center;
-        a{color: $fontColorOnGreen;}
+        a{
+          color: $fontColorOnGreen;
+        }
       }
       .slideButton:hover {
         @include buttonGreenHover;
@@ -646,7 +648,7 @@ ul ul {
         margin-top: 10px;
         a{color: $darkGray;}
       }
-      button:hover {
+      .popular11:hover {
         @include buttonWhiteHover;
         a{color: $primaryColor;}
       }
@@ -1384,11 +1386,11 @@ footer{
         justify-content: center;
         margin-top: 170px;
         width: 70%;
-        p {
+        h1 {
           font-size: 44px;
         }
-        button {
-          margin-top: 30px;
+        .popular11 {
+          margin: 30px auto 0 auto;
           width: 50%;
         }
       }
@@ -2299,10 +2301,10 @@ margin-left: -170px;
     .popularProduct {
       .popular1 {
         margin-top: 200px;
-        p {
+        h1 {
           font-size: 60pt;
         }
-        button {
+        .popular11 {
           margin-top: 60px;
           width: 40%;
         }
