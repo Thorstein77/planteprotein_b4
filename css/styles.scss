@@ -342,7 +342,7 @@ a{
 }
 }
 
-
+  //Casper - Header (start)
 
 header{
   display: grid;
@@ -372,10 +372,8 @@ header{
   display: none;
 }
 
+// DROP DOWN
 
-// DROP DOWN____________________________________________________
-
-/* Giving a background-color to the nav container. */
 nav {
   z-index: 5;
   grid-row: 1 / span 1;
@@ -403,21 +401,18 @@ hr {
   display: none;
 }
 
-  /* Styling the toggle lable */
-  .toggle {
-    display: block;
-    text-decoration:none;
-    border:none;
-    width: 20%;
-    float: right;
-  }
+.toggle {
+  display: block;
+  text-decoration:none;
+  border:none;
+  width: 20%;
+  float: right;
+}
 
-  .toggle:hover {
-    cursor: pointer;
-  }
+.toggle:hover {
+  cursor: pointer;
+}
 
-/* Removing padding, margin and "list-style" from the "ul",
- * and adding "position:reltive" */
 ul {
   display: none;
   padding:0;
@@ -426,14 +421,12 @@ ul {
   position: relative;
 }
 
-/* Positioning the navigation items inline */
 ul li {
   margin: 0;
   display:inline-block;
   width: 100%;
 }
 
-/* Styling the links */
 a {
   display:block;
   padding:14px 7vw;
@@ -442,12 +435,9 @@ a {
   text-decoration:none;
 }
 
-/* Hide Dropdowns by Default
- * and giving it a position of absolute */
 ul ul {
   display: none;
   position: absolute;
-  /* has to be the same number as the "line-height" of "nav a" */
   top: 25px;
 }
 
@@ -468,6 +458,8 @@ ul ul {
 }
 
 }
+
+// Header - Casper (slut)
 
 //Index - Sabine (Start) ----------------------------------------
 .index {
@@ -845,8 +837,9 @@ ul ul {
   }
 }
 
-//Products - Kristian (Slut)
+// Products - Kristian (Slut)
 
+// Product - Casper (Start)
 
 .product{
   display: grid;
@@ -959,6 +952,10 @@ ul ul {
 
 }
 
+// Product - Casper (Slut)
+
+// Kundeservice - Casper (Start)
+
 .kundeservice{
   display: grid;
   grid-template-rows: 100% auto auto auto auto auto;
@@ -1033,6 +1030,7 @@ ul ul {
 
 }
 
+// Kundeservice - Casper (Slut)
 
 // Footer - Kristian (Start)
 footer{
@@ -1130,6 +1128,7 @@ footer{
 
 // Footer - Kristian (Slut)
 
+// 404 - Casper (Start)
 
 .side404{
 
@@ -1158,9 +1157,12 @@ footer{
 
 }
 
+// 404 - Casper - (Slut)
+
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
 
+  // Product - Casper (start)
   .product{
 
     .productInfo{
@@ -1180,6 +1182,7 @@ footer{
     }
   }
 
+  // Product - Casper (slut)
 }
 
 @media screen and (min-width: 992px) {
@@ -1208,7 +1211,7 @@ footer{
 
 
 
-  //DROP DOWN____________________________________________________
+ // Header - Casper (start)
 
 header {
   display: grid;
@@ -1279,13 +1282,10 @@ header {
     display: none;
   }
 
-  /* Hide the navigation menu by default */
-  /* Also hide the  */
   nav .toggle + a,
   nav .menu {
   }
 
-  /* Styling the toggle lable */
   nav .toggle {
     display: none;
     text-decoration:none;
@@ -1298,12 +1298,10 @@ header {
     cursor: pointer;
   }
 
-  /* Display Dropdown when clicked on Parent Lable */
   [id^=drop]:checked + ul {
     display: block;
   }
 
-  /* Change menu item's width to 100% */
   nav ul li {
     display: block;
     width: auto;
@@ -1337,21 +1335,17 @@ header {
     background-color: #212121;
   }
 
-  /* Hide Dropdowns by Default */
   nav ul ul {
     display: block;
     position:static;
     color: #ffffff;
-    /* has to be the same number as the "line-height" of "nav a" */
   }
 
-  /* Hide menus on hover */
   nav ul ul li:hover > ul,
   nav ul li:hover > ul {
     display: block;
   }
 
-  /* Fisrt Tier Dropdown */
   nav ul ul li {
     display: block;
     width: 100%;
@@ -1359,8 +1353,6 @@ header {
 
   nav ul ul ul li {
     position: static;
-    /* has to be the same number as the "width" of "nav ul ul li" */
-
   }
 
   .headerGradient {
@@ -1371,6 +1363,8 @@ header {
   }
 
 }
+
+  // Header - Casper (slut)
 
   .searchBlog{
     display: flex;
@@ -1392,6 +1386,8 @@ header {
       border: none;
     }
   }
+
+  // Kundeservice - Casper (start)
 
 .kundeservice{
   display: grid;
@@ -1438,7 +1434,7 @@ header {
 
 }
 
-
+// Kundeservice - Casper (slut)
 
 .blogPic1{
   img{
@@ -1675,6 +1671,8 @@ header {
 
   //Products - Kristian (Slut)
 
+  //Product - Casper (start)
+
 .product{
   display: grid;
   grid-template-rows: auto auto auto;
@@ -1745,6 +1743,7 @@ header {
     }
   }
 }
+  // product - Casper (slut)
 
   footer {
     .footerGradient{
