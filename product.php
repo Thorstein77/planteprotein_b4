@@ -7,16 +7,23 @@
 <head>
     <?php
     require ("php/head.php");
+    require ("db/db.php");
+
+    $pId = mysqli_real_escape_string($db, $_GET["pid"]);
+    $result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
+    $pData = mysqli_fetch_assoc($result);
+
     ?>
 
     <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Sigende titel</title>
+    <title>
+        <?php
+        echo $pData['pBrand']." ".$pData['pName']." - ";
+        ?>
+        plante-protein.dk
+    </title>
 
-    <link rel="canonical" href="http://plante-protein.dk/product.php">
-
-
-
-
+    <link rel="canonical" href="http://plante-protein.dk/product.php?pid=<?php echo $pData['pId']; ?>">
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
@@ -24,11 +31,6 @@
 
 <?php
 require ("php/header.php");
-require ("db/db.php");
-
-$pId = mysqli_real_escape_string($db, $_GET["pid"]);
-$result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
-$pData = mysqli_fetch_assoc($result);
 
 $result = mysqli_query($db, "SELECT * FROM images WHERE iPId = '$pId'");
 $img = mysqli_fetch_assoc($result);

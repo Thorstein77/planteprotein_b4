@@ -9,7 +9,7 @@
     require ("php/head.php");
     ?>
     <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Kundeservice</title>
+    <title>Kundeservice - plante-protein.dk</title>
     <link rel="canonical" href="http://plante-protein.dk/customerservice.php">
 
 </head>

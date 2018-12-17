@@ -29,7 +29,11 @@
         </ul>
     </nav>
 
-
+    <div class="shoppingCart">
+        <div class="shoppingIcon">
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </div>
 
 
 
