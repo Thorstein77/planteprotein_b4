@@ -471,7 +471,7 @@ ul ul {
 
 //Index - Sabine (Start) ----------------------------------------
 .index {
-  //Slideshow ---------------------------------------------------
+  //Slideshow -----------------------------------
   .slideshow {
     position: relative;
     height: 110vw;
@@ -503,9 +503,11 @@ ul ul {
         color: #f2f2f2;
         margin: 20px 0 20px 0;
         width: 70%;
+        a{color: $fontColorOnGreen;}
       }
       .slideButton:hover {
         @include buttonGreenHover;
+        a{color: $darkGray;}
       }
     }
     .cursor {
@@ -593,7 +595,7 @@ ul ul {
     }
   }
 
-  //Populære produkter -------------------------------------------
+  //Populære produkter--------------------------------------
   .popularProduct {
     width: 100%;
     display: flex;
@@ -616,9 +618,11 @@ ul ul {
         @include buttonWhite;
         width: 100%;
         margin-top: 10px;
+        a{color: $darkGray;}
       }
       button:hover {
         @include buttonWhiteHover;
+        a{color: $primaryColor;}
       }
     }
     .popular2{
@@ -932,7 +936,6 @@ ul ul {
     }
   }
 }
-
 //Products - Kristian (Slut)
 
 
@@ -1044,7 +1047,6 @@ ul ul {
     }
 
   }
-
 }
 
 .kundeservice{
@@ -1098,7 +1100,6 @@ ul ul {
       width: 100%;
       margin: 8px 0;
     }
-
   }
 
   .kundeserviceKnap{
@@ -1118,7 +1119,6 @@ ul ul {
       @include buttonGreenHover
     }
   }
-
 }
 
 
@@ -2024,6 +2024,8 @@ header {
     //Vi tilbyder -----------------------
     .weOffer, .popularProduct, .newsletter, .about{
       margin-top: 120px !important;}
+    //Om os -----------------------------
+    .about {width: 60%;}
   }
 
 
@@ -2053,7 +2055,6 @@ header {
 
 .blogHeader{
 margin-left: -170px;
-
 }
 
   .blogInfobox{

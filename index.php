@@ -31,15 +31,15 @@ require ("php/header.php");
                 <img src="images/slideshow/slideBlog.png" alt="Grøntsager. Læs blog om plantebaserede proteinkilder">
                 <h3>5 Plantebaserede proteinkilder</h3>
                 <p>- Af Sarah Hofmann</p>
-                <button class="slideButton">Læs det her</button>
+                <button class="slideButton"><a href="blog.php">Læs det her</a></button>
             </div>
 
             <div class="slides fade">
                 <h2>Til den lille sult!</h2>
-                <img src="images/slideshow/slideProduct.png" alt="Alt-stars All-natural oatcakes">
-                <h3>Lige nu kan du købe 10 stk. <br>All-stars Oatcakes for 100 kr.</h3>
+                <img src="images/slideshow/slideProduct.png" alt="Alt Stars All Natural Oatcakes">
+                <h3>Lige nu kan du købe 10 stk. <br>All Stars Oatcakes for 100 kr.</h3>
                 <p>- Normal pris: 16 kr. pr. stk.</p>
-                <button class="slideButton">Se produkt</button>
+                <button class="slideButton"><a href="product.php?pid=16">Se produkt</a></button>
             </div>
             <!-- From & tilbage -->
             <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-angle-left"></i></a>
@@ -72,7 +72,7 @@ require ("php/header.php");
                 <div class="flexObject">
                     <i class="fas fa-hand-holding-heart"></i>
                     <p>100 % <br>Vegansk</p>
-                    <a href="#">Gå til produkter</a>
+                    <a href="products.php">Gå til produkter</a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@ require ("php/header.php");
     <section class="popularProduct">
         <div class="popular1">
             <p>Populære produkter</p>
-            <button type="button">Shop</button>
+            <button type="button"><a href="products.php">Shop</button>
         </div>
         <div class="popular2">
             <img src="images/productImages/vega-one-alt-i-en-shake-vegansk-proteinpulver.png" alt="Et af vores populære produkter, Vega one, alt i en shake. Vegansk proteinpulver">
