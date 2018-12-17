@@ -269,7 +269,6 @@ a{
 
 }
 
-
 .blogRead{
   margin-left: 38%;
   padding-top: 30px;
@@ -341,6 +340,7 @@ a{
   color: white;
   font-size: x-large;
   padding: 5px;
+
 
 }
 
@@ -489,31 +489,103 @@ ul ul {
 
 //Index - Sabine (Start) ----------------------------------------
 .index {
-    .prev, .next {
+  //Slideshow -----------------------------------
+  .slideshow {
+    position: relative;
+    height: 110vw;
+    .slides {
+      width: 100%;
+      display: none;
+      justify-content: center;
+      text-align: center;
+
+      .txt {
+        display: none;
+      }
+      h2, h3, p {
+        @include fontText;
+      }
+      h2 {
+        font-size: 28pt;
+        margin: 40px 0 20px 0;
+      }
+      h3 {
+        margin-top: 10px;
+      }
+      img {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .slideButton {
+        @include buttonGreen;
+        color: #f2f2f2;
+        margin: 20px 0 20px 0;
+        width: 70%;
+        a{color: $fontColorOnGreen;}
+      }
+      .slideButton:hover {
+        @include buttonGreenHover;
+        a{color: $darkGray;}
+      }
+    }
+    .cursor {
+      cursor: pointer;
+    }
+
+    //Frem & tilbage
+    .prev,
+    .next {
       cursor: pointer;
       position: absolute;
-      top: 50%;
+      top: 40%;
       width: auto;
-      margin-top: -22px;
       padding: 16px;
+      margin-top: -50px;
       color: $primaryColor;
       font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
+      font-size: 50px;
       border-radius: 0 3px 3px 0;
       user-select: none;
+      -webkit-user-select: none;
     }
+
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
     }
-    .prev:hover, .next:hover {
+
+    .prev:hover,
+    .next:hover {
       color: $darkGray;
+      transition: transform .2s;
+      transform: scale(1.1);
+    }
+
+    //Fade ved skift
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
   }
+
+  //Vi tilbyder ------------------------------------------
+  .weOffer, .popularProduct, .newsletter, .about{
+    margin-top: 60px !important;}
 
   .weOffer {
     width: 100%;
-    margin-top: 60px;
     .flexContainer {
       display: flex;
       justify-content: center;
@@ -529,21 +601,30 @@ ul ul {
             color: $primaryColor;
             margin-bottom: 10px;
           }
+          a{
+            color: $primaryColor;
+            font-size: 10pt;
+            font-weight: bold;
+            opacity: 0.7;
+          }
+          a:hover{opacity: 1;}
         }
       }
     }
   }
 
+  //Populære produkter--------------------------------------
   .popularProduct {
     width: 100%;
     display: flex;
     background-color: $primaryColor;
-    margin-top: 60px;
-    .popular {
-      width: 40%;
-      margin: 0 auto;
-      margin-top: 60px;
-      margin-bottom: 60px;
+    justify-content: center;
+    padding: 0 5% 0 5%;
+    .popular1 {
+      justify-content: center;
+      margin: 65px 0 60px 5%;
+      text-align: center;
+      width: 50%;
       p {
         @include fontText;
         text-align: center;
@@ -555,40 +636,50 @@ ul ul {
         @include buttonWhite;
         width: 100%;
         margin-top: 10px;
+        a{color: $darkGray;}
       }
       button:hover {
         @include buttonWhiteHover;
+        a{color: $primaryColor;}
+      }
+    }
+    .popular2{
+      width: 50%;
+      margin: 70px 0 60px 0;
+    }
+  }
+
+  //Tilmeld nyhedsbrev ---------------------------------------
+  .newsletter {
+    padding: 0 5% 0 5%;
+    p {
+      @include fontText;
+      text-align: center;
+      margin-top: 20px;
+    }
+    form {
+      width: 100%;
+      justify-content: center;
+      margin: 0 auto;
+      text-align: center;
+      input {
+        @include input;
+        width: 100%;
+        margin-top: 25px;
+      }
+      button {
+        @include buttonGreen;
+        width: 70%;
+        margin-top: 15px;
+      }
+      button:hover {
+        @include buttonGreenHover;
       }
     }
   }
 
-  .newsletter {
-    margin-top: 60px;
-    padding: 0 5% 0 5%;
-  }
-  p {
-    @include fontText;
-    text-align: center;
-    margin-top: 20px;
-  }
-  form {
-    input {
-      @include input;
-      width: 100%;
-      margin-top: 25px;
-    }
-    button {
-      @include buttonGreen;
-      width: 70%;
-      margin-top: 15px;
-    }
-    button:hover {
-      @include buttonGreenHover;
-    }
-  }
-
+  //Om os -----------------------------------------------------
   .about {
-    margin-top: 60px;
     margin-bottom: 50px;
     padding: 0 5% 0 5%;
     .aboutTxt {
@@ -599,6 +690,8 @@ ul ul {
     .imgBox {
       margin-top: 20px;
       .quote {
+        width: 100%;
+        margin-top: 15px;
         p {
           text-align: left;
           font-size: 14pt;
@@ -607,7 +700,6 @@ ul ul {
     }
   }
 }
-
 //Index - Sabine (Slut)------------------------------------------
 
 //Products - Kristian (Start)
@@ -862,7 +954,6 @@ ul ul {
     }
   }
 }
-
 //Products - Kristian (Slut)
 
 
@@ -974,7 +1065,6 @@ ul ul {
     }
 
   }
-
 }
 
 .kundeservice{
@@ -1028,7 +1118,6 @@ ul ul {
       width: 100%;
       margin: 8px 0;
     }
-
   }
 
   .kundeserviceKnap{
@@ -1048,7 +1137,6 @@ ul ul {
       @include buttonGreenHover
     }
   }
-
 }
 
 
@@ -1178,6 +1266,14 @@ footer{
 
 @media screen and (min-width: 768px) {
   // Alt der ændres i tablet stående fra mobil
+  //Index (Sabine)---------------
+  .index{
+    .slideshow{height: 95vw;}
+    .about {
+      padding: 0 20% 0 20%;
+
+    }
+  }
 
   .product{
 
@@ -1204,30 +1300,127 @@ footer{
   // Alt der ændres i tablet liggende fra mobil og tablet stående
   h1{font-size: 45pt}
 
-  .index{
+  //Index (Sabine) ------------------------
+  .index {
+    //Slideshow ---------------------------
+    .slideshow {
+      height: 24vw;
+      .slides {
+        text-align: left;
+        padding: 0 10% 0 10%;
+        h2, h3, p {
+          @include fontText;
+        }
+        h2 {
+          font-size: 34pt;
+          margin: 80px 0 15px 0;
+        }
+        h3 {
+          margin-top: 10px;
+          font-size: 18pt;
+        }
+        p {
+          font-size: 14pt;
+        }
+        img {
+          position: absolute;
+          z-index: 2;
+          top: -70px;
+          right: 50px;
+          width: 50%;
+        }
+        .slideButton {
+          margin: 20px 0 20px 0;
+          width: 25%;
+        }
+      }
+    }
+    //Vi tilbyder -----------------------------
+    .weOffer, .popularProduct, .newsletter, .about{
+      margin-top: 100px !important;}
+
     .weOffer {
-      margin-top: 70px;
       .flexContainer {
         width: 80%;
         .flex {
           display: flex;
           justify-content: space-around;
-          .i{
-            margin-top: 35px;
+          .flexObject {
+            i {
+              font-size: 70pt;
+              margin-top: 35px;
+              margin-bottom: 15px;
+            }
           }
         }
       }
     }
-
-    .popularProduct{
-      margin-top: 80px;
+  //Populære produkter -----------------------
+    .popularProduct {
+      width: 100%;
+      padding: 0 10% 0 10%;
+      .popular1 {
+        justify-content: center;
+        margin-top: 170px;
+        width: 70%;
+        p {
+          font-size: 44px;
+        }
+        button {
+          margin-top: 30px;
+          width: 50%;
+        }
+      }
+      .popular2{
+        margin: 80px 0 70px 0;
+      }
+    }
+    //Tilmeld nyhedsbrev ----------------
+    .newsletter {
+      padding: 0 10% 0 10%;
+      p {
+        margin-top: 30px;
+      }
+      form {
+        width: 70%;
+        button {
+          width: 40%;
+          margin-top: 20px;
+        }
+      }
+    }
+    //Om os -----------------------------
+    .about {
+      h1{text-align: left;}
+      margin: 0 auto;
+      margin-bottom: 70px;
+      padding: 0;
+      width: 80%;
+      .aboutFlex {
+        display: flex;
+        justify-content: center;
+        .aboutTxt {
+          p {
+            text-align: left;
+          }
+        }
+        .imgBox {
+          margin: 20px 0 0 6%;
+          .quote {
+            p {
+              text-align: left;
+              font-size: 14pt;
+            }
+          }
+        }
+      }
     }
   }
 
 
 
-  //DROP DOWN____________________________________________________
 
+  //DROP DOWN____________________________________________________
 header {
   display: grid;
   width: 100%;
@@ -1492,18 +1685,18 @@ header {
 }
 
 
-  
+
 .blogFlexcontainer{
-   display: flex;               
+   display: flex;
    flex-direction: row-reverse;
-}  
+}
 
 .blogContent{
   width: 90%;
   margin: 0 auto;
-  
+
 }
-  
+
   .blogInfobox{
     margin-left: 200px;
     margin-top: 30px;
@@ -1897,6 +2090,26 @@ header {
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
+  //Index (sabine)
+  .index{
+    //Slideshow ------------------
+    .slideshow {
+      height: 28vw;
+      .slides {
+        padding: 0 15% 0 15%;
+        img {
+          top: -70px;
+          right: 100px;
+        }
+      }
+    }
+    //Vi tilbyder -----------------------
+    .weOffer, .popularProduct, .newsletter, .about{
+      margin-top: 120px !important;}
+    //Om os -----------------------------
+    .about {width: 60%;}
+  }
+
 
   .searchBlog{
     display: flex;
@@ -1925,14 +2138,13 @@ header {
 
 .blogHeader{
 margin-left: -170px;
-
 }
 
   .blogInfobox{
     margin-left: 310px;
   }
 
-  
+
 .blogLink{
   margin-left: 270px;
 }
@@ -2002,6 +2214,89 @@ margin-left: -170px;
 
 }
 
-@media print {
-  // Alt der gælder for print specifikt
+
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 55pt
+  }
+
+  //Index (Sabine) -----------------------
+  .index {
+    .slideshow {
+      height: 28vw;
+      .slides {
+        padding: 0 15% 0 15%;
+        h2 {
+          font-size: 50pt;
+          margin: 160px 0 15px 0;
+        }
+        h3 {
+          font-size: 25pt;
+        }
+        p {
+          font-size: 20pt;
+        }
+        img {
+          right: 100px;
+          width: 50%;
+          top: -120px;
+        }
+        .slideButton {
+          margin: 30px 0 20px 0;
+          width: 20%;
+        }
+      }
+    }
+    //Vi tilbyder ------------------------
+    .weOffer, .popularProduct, .newsletter, .about {
+      margin-top: 110px !important;
+    }
+
+    .weOffer {
+      .flexContainer {
+        width: 50%;
+        .flex {
+          .flexObject {
+            i {
+              font-size: 75pt;
+            }
+          }
+        }
+      }
+    }
+    //Populære produkter -----------------------------
+    .popularProduct {
+      .popular1 {
+        margin-top: 200px;
+        p {
+          font-size: 60pt;
+        }
+        button {
+          margin-top: 60px;
+          width: 40%;
+        }
+      }
+      .popular2 {
+        margin: 110px 0 100px 6%;
+      }
+    }
+    //Tilmeld nyhedsbrev ----------------------
+    .newsletter {
+      padding: 0 10% 0 10%;
+      p {
+        margin-top: 30px;
+      }
+      form {
+        width: 50%;
+        button {
+          width: 30%;
+        }
+      }
+
+    }
+  }
+
+  @media print {
+    // Alt der gælder for print specifikt
+  }
 }
