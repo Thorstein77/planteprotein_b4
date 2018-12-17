@@ -60,7 +60,7 @@ require ("php/header.php");
 </div>
 
    <button class="myButtonedit">
-      <p>Ret</p>
+      Ret
    </button>
 
 <br><br>

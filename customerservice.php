@@ -43,7 +43,7 @@ require ("php/header.php");
 
     <div class="kundeserviceBillede">
 
-        <img src="images/collared-shirt.jpg">
+        <img src="images/collared-shirt.jpg" alt="ejer af plante-protein.dk">
 
     </div>
 
@@ -83,7 +83,7 @@ require ("php/footer.php");
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script></script>
 
 </body>
 </html>

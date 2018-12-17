@@ -54,7 +54,7 @@ $priceData = mysqli_fetch_assoc($pResult);
 
 
     <div class="productPic">
-        <img src="<?php echo $img['iLink']; ?>">
+        <img src="<?php echo $img['iLink']; ?>" alt="<?php echo $img['iAlt'] ?>">
     </div>
 
 
@@ -142,7 +142,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                 ?>
             </p>
             <br><br>
-            <img src="<?php echo $pData['pContent'] ?>">
+            <img src="<?php echo $pData['pContent'] ?>" alt="produkt næringsværdi">
 
         </div>
 
@@ -151,7 +151,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pGluten"] == 'Yes'){
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/gluten.png">
+                    <img src="images/icons/gluten.png" alt="Gluten fri">
                 </div>
                 <?php
             }
@@ -159,7 +159,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pSoy"] == 'Yes'){
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/soy.png">
+                    <img src="images/icons/soy.png" alt="Soya fri">
                 </div>
                 <?php
             }
@@ -167,7 +167,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pLactose"] == 'Yes') {
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/lactose.png">
+                    <img src="images/icons/lactose.png" alt="Lactose fri">
                 </div>
                 <?php
             }
@@ -176,7 +176,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                 ?>
 
                 <div class="iconImg">
-                    <img src="images/icons/organic.png">
+                    <img src="images/icons/organic.png" alt="Økologisk">
                 </div>
                 <?php
             }
