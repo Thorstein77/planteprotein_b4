@@ -101,7 +101,7 @@ require ("php/header.php");
     </label>
 
 
-    <br>
+    <br> <br>
 
 <button class="Nyhedsbrev">Tilmeld Dig Nyhedsbrev</button>
 </div>
@@ -112,7 +112,7 @@ require ("php/header.php");
 
         <div class="myOrders">
            <p>
-               Ordrehistorik
+            Ordrehistorik
            </p>
         </div>
 
@@ -138,7 +138,7 @@ require ("php/header.php");
             </ul>
 
         </div>
-
+<br> <br>
     </div>
 
 </main>
