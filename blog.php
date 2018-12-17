@@ -85,13 +85,13 @@ require ("php/header.php");
 <article class="blog">
 
 
-    <article class="blogIntro">
+    <div class="blogIntro">
         <p>
             Protein er en af de vigtigste elementer til vores kroppe byggesten og derfor er det ofte stillede spørgsmål om veganere og vegetarer nu også får nok protein, så deres kroppe. <br><br>
 
             Men plantebaseret proteinkilder, optages meget nemmere af vores kroppe på grund af det aktive stof, som hedder aminosyre, der nedpryder proteinen og din krop optager vitiaminerne hurtigerer.
         </p>
-    </article>
+    </div>
 
 
 
@@ -100,7 +100,7 @@ require ("php/header.php");
         <h3>1. Spirulina</h3>
     </div>
     <div class="blogPic1">
-        <img src="images/spirunatang.jpg"
+        <img src="images/spirunatang.jpg">
     </div>
     <div class="blogTxt1">
         <p>
@@ -109,7 +109,7 @@ require ("php/header.php");
             Vi anbefaler at bruge Spirulina i din smoothie med citrus og/eller ananas eller i en lækker vitaminfyldt grøn juice. <br><br>
 
             Hvis du ikke er typen som lige står og presser en juice, kan Spirulina fås i tabletter.
-            kan købes her: <a href=" https://www.helsebixen.dk/shop/spirulina-502c1.html"target="_blank">helsebixen.dk</a>
+            kan købes her: <a href=" https://www.helsebixen.dk/shop/spirulina-502c1.html" target="_blank">helsebixen.dk</a>
             <br><br>
 
             2 spiseske Spirulina indeholder 8 g protein
@@ -125,7 +125,7 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic2">
-        <img src="images/Aert_cropped.png"
+        <img src="images/Aert_cropped.png">
     </div>
     <div class="blogTxt2">
         Ud over at indeholde en lav mængde fedt og kcal. er grønne ærter smækfyldt med protein og er derfor en ideel udskiftning fra mælkeprotein og æggehvider. <br> <br>
@@ -145,7 +145,7 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic3">
-        <img src="images/rodelinser.jpg"
+        <img src="images/rodelinser.jpg">
     </div>
     <div class="blogTxt3">
         Linser er så fantastiske til en vegetarisk middag. Alt fra millionbøf til veganske hakkebøffer/bruger og mættende element i salater.<br><br>
@@ -164,7 +164,7 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic4">
-        <img src="images/kikrternye.jpg"
+        <img src="images/kikrternye.jpg">
     </div>
     <div class="blogTxt4">
         Vi elsker hummus! det er uden tvivl veganernes bedste ven.<br> <br>
@@ -181,13 +181,13 @@ require ("php/header.php");
         </h3>
     </div>
     <div class="blogPic5">
-        <img src="images/Grflager21.jpg"
+        <img src="images/Grflager21.jpg">
     </div>
     <div class="blogTxt5">
         Hvis du ikke allerede kender til fænomenet er det på tide. Er du lige som de fleste vilde med pasta retter, så er dette et fantastisk supplement til at drysse ovenpå, da flagerne har en oste agtig smag.<br> <br>
 
 
-        Flagerne har en positiv virkning på rigtig mange ting, men især på kolesterol. Er du interesseret i gærflager kan de købes her: <a href="https://www.helsebixen.dk/shop/lasagnette-o.html?gclid=Cj0KCQiArqPgBRCRARIsAPwlHoXnMv64-LoZrt0zy8pbChJe1-H7mrR3u9eMEirTni2y4V4BLBr0OPEaAm_uEALw_wcB"target="_blank">Helsebiksen.dk</a>
+        Flagerne har en positiv virkning på rigtig mange ting, men især på kolesterol. Er du interesseret i gærflager kan de købes her: <a href="https://www.helsebixen.dk/shop/lasagnette-o.html?gclid=Cj0KCQiArqPgBRCRARIsAPwlHoXnMv64-LoZrt0zy8pbChJe1-H7mrR3u9eMEirTni2y4V4BLBr0OPEaAm_uEALw_wcB" target="_blank">Helsebiksen.dk</a>
 
         <br> <br>
 
@@ -260,7 +260,7 @@ require ("php/footer.php");
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function(e) {
     // Din kode her
 });
