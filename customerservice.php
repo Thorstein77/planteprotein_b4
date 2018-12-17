@@ -10,6 +10,7 @@
     ?>
     <!-- Titel som ses oppe i browserens tab mv. -->
     <title>Kundeservice</title>
+    <link rel="canonical" href="http://plante-protein.dk/customerservice.php">
 
 </head>
 
