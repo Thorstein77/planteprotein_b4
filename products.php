@@ -8,7 +8,8 @@
     <?php
     require ("php/head.php");
     ?>
-<title>Sigende titel</title>
+<title>Proteinpulver og proteinbar - plante-protein.dk</title>
+<link rel="canonical" href="http://plante-protein.dk/products.php">
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
