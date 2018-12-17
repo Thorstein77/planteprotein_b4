@@ -5,7 +5,7 @@
     </div>
 
     <div class="headerLogo">
-        <img src="images/LogoHvid.png">
+        <a href="index.php"><img src="images/LogoHvid.png"></a>
     </div>
 
 
@@ -19,13 +19,13 @@
 
         <ul class="menu">
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="#">Produkter</a></li>
+            <li><a href="products.php">Produkter</a></li>
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="#">Blog</a></li>
+            <li><a href="blog.php">Blog</a></li>
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li><a href="#">Kundeservice</a></li>
+            <li><a href="customerservice.php">Kundeservice</a></li>
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li class="menuLogInd"><a href="#">Log ind</a></li>
+            <li class="menuLogInd"><a href="userPage.php">Log ind</a></li>
         </ul>
     </nav>
 
