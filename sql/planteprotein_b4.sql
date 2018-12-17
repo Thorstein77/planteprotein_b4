@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 16, 2018 at 09:06 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Vært: 127.0.0.1
+-- Genereringstid: 17. 12 2018 kl. 12:12:37
+-- Serverversion: 10.1.26-MariaDB
+-- PHP-version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Struktur-dump for tabellen `blog`
 --
 
 CREATE TABLE `blog` (
@@ -38,7 +38,7 @@ CREATE TABLE `blog` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blogparts`
+-- Struktur-dump for tabellen `blogparts`
 --
 
 CREATE TABLE `blogparts` (
@@ -53,7 +53,7 @@ CREATE TABLE `blogparts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Struktur-dump for tabellen `images`
 --
 
 CREATE TABLE `images` (
@@ -64,7 +64,7 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci;
 
 --
--- Dumping data for table `images`
+-- Data dump for tabellen `images`
 --
 
 INSERT INTO `images` (`iId`, `iPId`, `iLink`, `iAlt`) VALUES
@@ -127,7 +127,7 @@ INSERT INTO `images` (`iId`, `iPId`, `iLink`, `iAlt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `newsletter`
+-- Struktur-dump for tabellen `newsletter`
 --
 
 CREATE TABLE `newsletter` (
@@ -139,7 +139,7 @@ CREATE TABLE `newsletter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktur-dump for tabellen `products`
 --
 
 CREATE TABLE `products` (
@@ -156,7 +156,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci;
 
 --
--- Dumping data for table `products`
+-- Data dump for tabellen `products`
 --
 
 INSERT INTO `products` (`pId`, `pName`, `pBrand`, `pDesc`, `pContent`, `pGluten`, `pSoy`, `pLactose`, `pOrganic`, `pType`) VALUES
@@ -181,7 +181,7 @@ INSERT INTO `products` (`pId`, `pName`, `pBrand`, `pDesc`, `pContent`, `pGluten`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taste`
+-- Struktur-dump for tabellen `taste`
 --
 
 CREATE TABLE `taste` (
@@ -191,7 +191,7 @@ CREATE TABLE `taste` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci;
 
 --
--- Dumping data for table `taste`
+-- Data dump for tabellen `taste`
 --
 
 INSERT INTO `taste` (`tId`, `tPId`, `tName`) VALUES
@@ -249,7 +249,7 @@ INSERT INTO `taste` (`tId`, `tPId`, `tName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur-dump for tabellen `user`
 --
 
 CREATE TABLE `user` (
@@ -268,7 +268,7 @@ CREATE TABLE `user` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userreview`
+-- Struktur-dump for tabellen `userreview`
 --
 
 CREATE TABLE `userreview` (
@@ -281,7 +281,7 @@ CREATE TABLE `userreview` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `weight`
+-- Struktur-dump for tabellen `weight`
 --
 
 CREATE TABLE `weight` (
@@ -292,7 +292,7 @@ CREATE TABLE `weight` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci;
 
 --
--- Dumping data for table `weight`
+-- Data dump for tabellen `weight`
 --
 
 INSERT INTO `weight` (`wId`, `wPId`, `wAmount`, `wPrice`) VALUES
@@ -307,7 +307,7 @@ INSERT INTO `weight` (`wId`, `wPId`, `wAmount`, `wPrice`) VALUES
 (9, 6, '983 Gram', '344.00'),
 (10, 6, '1830 Gram', '534.00'),
 (11, 7, '400 Gram', '210.00'),
-(12, 7, '400 Gram', '350.00'),
+(12, 7, '800 Gram', '350.00'),
 (13, 8, '500 Gram', '125.00'),
 (14, 8, '1000 Gram', '205.00'),
 (15, 9, '450 Gram', '229.00'),
@@ -326,117 +326,117 @@ INSERT INTO `weight` (`wId`, `wPId`, `wAmount`, `wPrice`) VALUES
 (28, 17, '70 Gram', '22.00');
 
 --
--- Indexes for dumped tables
+-- Begrænsninger for dumpede tabeller
 --
 
 --
--- Indexes for table `blog`
+-- Indeks for tabel `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`bId`);
 
 --
--- Indexes for table `blogparts`
+-- Indeks for tabel `blogparts`
 --
 ALTER TABLE `blogparts`
   ADD PRIMARY KEY (`bpId`);
 
 --
--- Indexes for table `images`
+-- Indeks for tabel `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`iId`);
 
 --
--- Indexes for table `newsletter`
+-- Indeks for tabel `newsletter`
 --
 ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`nId`);
 
 --
--- Indexes for table `products`
+-- Indeks for tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`pId`);
 
 --
--- Indexes for table `taste`
+-- Indeks for tabel `taste`
 --
 ALTER TABLE `taste`
   ADD PRIMARY KEY (`tId`);
 
 --
--- Indexes for table `user`
+-- Indeks for tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`uId`);
 
 --
--- Indexes for table `userreview`
+-- Indeks for tabel `userreview`
 --
 ALTER TABLE `userreview`
   ADD PRIMARY KEY (`urId`);
 
 --
--- Indexes for table `weight`
+-- Indeks for tabel `weight`
 --
 ALTER TABLE `weight`
   ADD PRIMARY KEY (`wId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Brug ikke AUTO_INCREMENT for slettede tabeller
 --
 
 --
--- AUTO_INCREMENT for table `blog`
+-- Tilføj AUTO_INCREMENT i tabel `blog`
 --
 ALTER TABLE `blog`
   MODIFY `bId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `blogparts`
+-- Tilføj AUTO_INCREMENT i tabel `blogparts`
 --
 ALTER TABLE `blogparts`
   MODIFY `bpId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `images`
+-- Tilføj AUTO_INCREMENT i tabel `images`
 --
 ALTER TABLE `images`
   MODIFY `iId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT for table `newsletter`
+-- Tilføj AUTO_INCREMENT i tabel `newsletter`
 --
 ALTER TABLE `newsletter`
   MODIFY `nId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- Tilføj AUTO_INCREMENT i tabel `products`
 --
 ALTER TABLE `products`
   MODIFY `pId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `taste`
+-- Tilføj AUTO_INCREMENT i tabel `taste`
 --
 ALTER TABLE `taste`
   MODIFY `tId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT for table `user`
+-- Tilføj AUTO_INCREMENT i tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `uId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `userreview`
+-- Tilføj AUTO_INCREMENT i tabel `userreview`
 --
 ALTER TABLE `userreview`
   MODIFY `urId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `weight`
+-- Tilføj AUTO_INCREMENT i tabel `weight`
 --
 ALTER TABLE `weight`
   MODIFY `wId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;

@@ -26,7 +26,7 @@
             <h2>Trustpilot</h2>
 
             <a href="https://dk.trustpilot.com/review/www.plante-protein.dk" target="_blank">
-                <img src="images/Trustpilot.png">
+                <img src="images/Trustpilot.png" alt="Trustpilot">
             </a>
         </div>
 
