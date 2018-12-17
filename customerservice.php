@@ -10,6 +10,7 @@
     ?>
     <!-- Titel som ses oppe i browserens tab mv. -->
     <title>Kundeservice</title>
+    <link rel="canonical" href="http://plante-protein.dk/customerservice.php">
 
 </head>
 
@@ -48,7 +49,7 @@ require ("php/header.php");
 
     <div class="kundeserviceFormularer">
 
-        <form method="post" action="kundeservice.php">
+        <form method="post" action="customerservice.php">
 
         <label for="beskrivelse">Beskriv dit spørgsmål</label>
 
@@ -60,7 +61,7 @@ require ("php/header.php");
 
         </form>
 
-        <form method="post" action="kundeservice.php">
+        <form method="post" action="customerservice.php">
 
             <input type="text" name="e-mail" id="e-mail" placeholder="Indtas e-mail" value="">
 

@@ -33,101 +33,211 @@
 
 <?php
 require ("db/db.php");
-
-$product = mysqli_query($db, "SELECT * FROM products WHERE pId = '2'");
-$pData = mysqli_fetch_assoc($product);
-$pId = $pData["pId"];
-$images = mysqli_query($db, "SELECT * FROM images WHERE iPId = '$pId' ORDER BY iId");
-$iData = mysqli_fetch_assoc($images);
-$taste = mysqli_query($db, "SELECT * FROM taste WHERE tPId = '$pId' ORDER BY tId");
-$weight = mysqli_query($db, "SELECT * FROM weight WHERE wPId = '$pId' ORDER BY wId");
-
-
-
-echo $pData["pBrand"]." ".$pData["pName"];
 ?>
 
-<img src="<?php echo $iData['iLink'] ?>">
+<main class="products">
 
-<?php
-while($tData = mysqli_fetch_assoc($taste)){
-    $var = $tData["tName"];
+    <h1>Produkter</h1>
 
-    echo $var."<br>";
-}
+    <p class="productText">
+        Hos Plante-protein.dk er alle produkter 100% veganske. Du kan
+        være helt rolig mens du kigger på vores udvalg. Derudover
+        er alle produkter markeret med et ikon der viser om de er
+        glutenfri, laktosefri eller økologiske.
+    </p>
 
-while($wData = mysqli_fetch_assoc($weight)){
-    $var = $wData["wAmount"];
-    $price = $wData["wPrice"];
-    echo $var." ".$price.",-<br>";
-}
-?>
+    <aside>
 
+        <div class="search">
+            <input placeholder="Søg i produkter">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
 
+        <button class="productsFilter">Filtrer</button>
 
-<?php
+        <div class="productsSearch">
+            <form class="grid" method="get" action="testDB.php">
+                <div id="gridItem1">
+                    <h3>Type</h3>
 
-if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
-    $pagenum = mysqli_real_escape_string($db, $_GET['pagenum']);
-}else{
-    $pagenum = 1;
-}
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="proteinpulver" name="type[]">
+                            Proteinpulver
+                        </li>
+                        <li>
+                            <input type="checkbox" value="proteinbar" name="type[]">
+                            Proteinbar
+                        </li>
+                    </ul>
+                </div>
 
-echo $pagenum."<br>";
+                <div id="gridItem2">
+                    <h3>Smag</h3>
 
-// hvor mange produkter vi vil se per side
-$totalProductsPerPage = 9;
-// beregner hvor mange produkter der skal 'springes over'
-$offset = ($pagenum - 1) * $totalProductsPerPage;
-$prevPage = ($pagenum -1);
-$nextPage = ($pagenum + 1);
-$edjacents = "2";
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="vani" name="taste[]">
+                            Vanilje
+                        </li>
+                        <li>
+                            <input type="checkbox" value="Choc" name="taste[]">
+                            Chokolade
+                        </li>
+                        <li>
+                            <input type="checkbox" value="neut" name="taste[]">
+                            Neutral
+                        </li>
+                        <li>
+                            <input type="checkbox" value="ber" name="taste[]">
+                            Bær
+                        </li>
+                        <li>
+                            <input type="checkbox" value="coco" name="taste[]">
+                            Kokos
+                        </li>
+                    </ul>
+                </div>
 
-$resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products");
-$totalProducts = mysqli_fetch_array($resultCount);
-$totalProducts = $totalProducts['totalProducts'];
-$totalNumOfPages = ceil($totalProducts / $totalProductsPerPage);
-$secondLast = ($totalNumOfPages - 1);
+                <div id="gridItem3">
+                    <h3>Mærke</h3>
 
-$result = mysqli_query($db, "SELECT * FROM products LIMIT $offset, $totalProductsPerPage");
-while($row = mysqli_fetch_array($result)){
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="Multipower" name="brand[]">
+                            Multipower
+                        </li>
+                        <li>
+                            <input type="checkbox" value="The Protein Works" name="brand[]">
+                            The Protein Works
+                        </li>
+                        <li>
+                            <input type="checkbox" value="Scitech Nutrition" name="brand[]">
+                            Scitech Nutrition
+                        </li>
+                        <li>
+                            <input type="checkbox" value="GymQueen" name="brand[]">
+                            GymQueen
+                        </li>
+                        <li>
+                            <input type="checkbox" value="Plantforce" name="brand[]">
+                            Plantforce
+                        </li>
+                    </ul>
+                </div>
 
-    // her insættes de ting der skal udskrives, aka produkter
+                <div id="gridItem4">
+                    <h3 class="webHide">&#8205;</h3>
 
-    echo $row['pId'];
-}
-?>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="Rawfusion" name="brand[]">
+                            Rawfusion
+                        </li>
+                        <li>
+                            <input type="checkbox" value="SunWarrior" name="brand[]">
+                            SunWarrior
+                        </li>
+                        <li>
+                            <input type="checkbox" value="HEJ" name="brand[]">
+                            Hej Neutral
+                        </li>
+                        <li>
+                            <input type="checkbox" value="Vega" name="brand[]">
+                            Vega
+                        </li>
 
-<ul class="pagination">
-    <?php if($pagenum > 1){
-        echo "<li><a href='?pagenum=1'>First Page</a></li>";
-    } ?>
+                    </ul>
+                </div>
 
-    <li <?php if($pagenum <= 1){ echo "class='disabled'"; } ?>>
-        <a <?php if($pagenum > 1){
-            echo "href='?pagenum=$prevPage'";
-        } ?>>Previous</a>
-    </li>
+                <div id="gridItem5">
+                    <button type="submit" name="submit">
+                        Filtrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </aside>
 
-    <li <?php if($pagenum >= $totalNumOfPages){
-        echo "class='disabled'";
-    } ?>>
-        <a <?php if($pagenum < $totalNumOfPages) {
-            echo "href='?pagenum=$nextPage'";
-        } ?>>Next</a>
-    </li>
+    <?php
 
-    <?php if($pagenum < $totalNumOfPages){
-        echo "<li><a href='?pagenum=$totalNumOfPages'>Last &rsaquo;&rsaquo;</a></li>";
-    } ?>
-</ul>
+    if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
+        $pagenum = mysqli_real_escape_string($db, $_GET['pagenum']);
+    }else{
+        $pagenum = 1;
+    }
+    // hvor mange produkter vi vil se per side
+    $totalProductsPerPage = 3;
+    // beregner hvor mange produkter der skal 'springes over'
+    $offset = ($pagenum - 1) * $totalProductsPerPage;
+    $prevPage = ($pagenum -1);
+    $nextPage = ($pagenum + 1);
+
+    if(isset($_GET["submit"])){
+        if(isset($_GET['taste'])){
+            $taste = $_GET['taste'];
+            $tPId = array();
+            foreach($taste as $value){
+                $var = mysqli_real_escape_string($db, $value);
+                $pResult = mysqli_query($db, "SELECT * FROM taste WHERE tName LIKE '%$var%'");
+                while($data = mysqli_fetch_assoc($pResult)){
+                    array_push($tPId, $data['tPId']);
+                }
+            }
+
+            $pId = array_unique($tPId);
+            $pCount = count($pId);
+            $i = 1;
+            $pFilter = " pId = ";
+
+            foreach($pId as $value){
+                $pFilter .= "'".$value."'";
+                if($i < $pCount){
+                    $pFilter .= " OR pId = ";
+                }
+                $i++;
+            }
+
+            print_r($pId);
+        }
+    }
+    ?>
+</main>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    var $animateInfo = $('.info');
+    var $window = $(window);
+
+    $window.on('scroll resize', checkIfOnScreen);
+    $window.trigger('scroll');
+
+    function checkIfOnScreen(){
+        var windowHeight = $window.height();
+        var windowTopPosition = $window.scrollTop();
+        var windowBottomPosition = (windowTopPosition + windowHeight);
+
+        $.each($animateInfo, function () {
+
+            var $object = $(this);
+            var objectHeight = $object.outerHeight();
+            var objectTopPosition = $object.offset().top;
+            var objectBottomPosition = (objectTopPosition + objectHeight);
+
+            // check if object is in view
+            if((objectBottomPosition >= windowTopPosition) &&
+                (objectTopPosition <= windowBottomPosition)){
+                $object.addClass('inView');
+            }else{
+                $object.removeClass('inView');
+            }
+        });
+    }
 
 </script>
 

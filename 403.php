@@ -46,15 +46,12 @@ require ("php/header.php");
 <main class="side404">
 
     <img src="images/starkgulerod2-8.png">
-    
-    <h1>404 - Siden blev ikke fundet :(</h1>
+
+    <h1>403 - Du har ikke adgang :(</h1>
 
     <a href="index.php"><button>Tilbage til forsiden</button></a>
 
 </main>
-
-
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
