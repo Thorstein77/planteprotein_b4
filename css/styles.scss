@@ -1844,7 +1844,7 @@ header {
 
         h3{
           margin-top: 20px;
-          font-size: 17px;
+          font-size: 16px;
         }
 
         a{
@@ -1852,6 +1852,12 @@ header {
           flex-direction: column;
           justify-content: space-between;
           height: 500px;
+
+          .productsImg{
+            max-height: 223px;
+            max-width: 223px;
+            margin: 0 auto;
+          }
         }
 
         .info{
@@ -1892,6 +1898,12 @@ header {
                 transition: opacity 1s ease-in-out;
                 -moz-transition: opacity 1s ease-in-out;
                 -webkit-transition: opacity 1s ease-in-out;
+
+                .iconImg{
+                  img{
+                    max-width: 100%;
+                  }
+                }
               }
 
               p {
