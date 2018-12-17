@@ -53,7 +53,7 @@ require ("php/header.php");
            E-Mail: jens.jensen@gmail.com <br>
            </p>
        </div>
-    </div
+    </div>
 
         <br><br>
 
@@ -126,7 +126,7 @@ require ("php/footer.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function(e) {
     // Din kode her
 
