@@ -135,7 +135,7 @@ a{
   }
 }
 
-
+// sarah blogside start -------------------------------------
 
 .blogOverheader{
   text-align: center;
@@ -269,12 +269,15 @@ a{
 
 }
 
+
 .blogRead{
   margin-left: 38%;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
+// sarah blogside slut ------------------------------------
+// sarah minkonto start------------------------------------
 .myHeader{
   text-align: center;
   width: 100%;
@@ -285,6 +288,21 @@ a{
 .myInfobox{
   width: 90%;
   margin: 0 auto;
+
+}
+.myInputbox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .myContainer{
+
+    padding: 10px;
+
+  }
+  .Nyhedsbrev{
+
+  }
 
 }
 
@@ -320,11 +338,11 @@ a{
   height: auto;
   width: 90%;
   margin: 0 auto;
+  color: white;
+  font-size: x-large;
+  padding: 5px;
 
-  
 }
-
-
 
 .myHistory{
   width: 90%;
@@ -342,7 +360,7 @@ a{
 }
 }
 
-
+// sarah min konto slut ----------------------------------
 
 header{
   display: grid;
@@ -854,7 +872,7 @@ ul ul {
   grid-template-columns: auto;
 
   padding: 0 15px;
- 
+
 
   .productName{
     grid-row: 1 / span 1;
@@ -1372,6 +1390,8 @@ header {
 
 }
 
+  // sarah blog start --------------------------------
+
   .searchBlog{
     display: flex;
     justify-content: center;
@@ -1392,6 +1412,8 @@ header {
       border: none;
     }
   }
+
+  // sarah blog slut ----------------------------------
 
 .kundeservice{
   display: grid;
@@ -1438,7 +1460,7 @@ header {
 
 }
 
-
+// sarah blog side start ------------------------------
 
 .blogPic1{
   img{
@@ -1507,6 +1529,8 @@ header {
 .blogRead{
   margin-left: 23%;
 }
+
+  // sarah blogside slut----------------------------------
 
   //Products - Kristian (Start)
   .products{
@@ -1811,7 +1835,65 @@ header {
       }
     }
   }
+
+
+  .myInfobox{
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .myInfotxt1{
+    display: flex;
+  }
+
+  .myInfoTxt2{
+    display: flex;
+    margin-left:  40px;
+  }
+
+  .myButtonedit{
+    margin-left: 440px;
+    @include buttonGreen;
+  }
+
+  .myButtonedit:hover{
+    @include buttonGreenHover;
+  }
+
+
+
+
+  .myPassword{
+    @include buttonGreen;
+
+  }
+
+  .myPassword:hover{
+    @include buttonGreenHover;
+  }
+
+.Nyhedsbrev{
+  @include buttonGreen;
 }
+
+.Nyhedsbrev:hover{
+  @include buttonGreenHover;
+}
+
+  .myPassword{
+   margin-left: 250px;
+    margin-bottom: 50px;
+  }
+
+  .myInputbox{
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+}
+
+
 
 @media screen and (min-width: 1200px) {
   // Alt der ændres i computer fra mobil, tablet stående og tablet liggende
@@ -1839,6 +1921,7 @@ header {
     }
   }
 
+// sarah blog side slut--------------------------------
 
 .blogHeader{
 margin-left: -170px;
@@ -1870,6 +1953,7 @@ margin-left: -170px;
 
   }
 
+// sarah blog side slut ------------------------------
 
   footer {
     .footerGradient{
@@ -1890,6 +1974,32 @@ margin-left: -170px;
       }
     }
   }
+
+// sarah min konto start ------------------------------
+
+.myHeader{
+  margin: 0 auto;
+}
+
+.myInfobox{
+  margin: 0 auto;
+  width: 40%;
+}
+
+  .myPassword{
+    margin-left: 388px;
+    margin-bottom: 100px;
+  }
+
+.myInputbox{
+  width: 35%;
+}
+
+
+// sarah min konto slut ----------------------------------
+
+
+
 }
 
 @media print {
