@@ -11,6 +11,7 @@
 <!-- Titel som ses oppe i browserens tab mv. -->
 
 <title>plante-protein</title>
+    <link rel="canonical" href="http://plante-protein.dk/index.php">
 
 
 </head>

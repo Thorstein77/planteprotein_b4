@@ -25,7 +25,7 @@
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
             <li><a href="customerservice.php">Kundeservice</a></li>
             <hr class="menuHrLinje" align="center" noshade="noshade" width="90%">
-            <li class="menuLogInd"><a href="MinKonto.php">Log ind</a></li>
+            <li class="menuLogInd"><a href="userPage.php">Log ind</a></li>
         </ul>
     </nav>
 
