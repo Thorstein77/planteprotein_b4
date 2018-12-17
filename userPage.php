@@ -90,6 +90,7 @@ require ("php/header.php");
            <p>
             Ordrehistorik
            </p>
+            <i class="fas fa-caret-down"></i>
         </div>
 
         <div class="myHistory">
@@ -131,6 +132,7 @@ $(document).ready(function(e) {
 
     $('.myOrders').click(function () {
         $('.myHistory').toggle("slow")
+
     })
 
 });
