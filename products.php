@@ -396,7 +396,8 @@ require ("db/db.php");
 
                             <p>
                                 <?php
-                                echo $priceResult["wPrice"];
+                                $priceFormat = number_format($priceResult["wPrice"], 2, ',', '.');
+                                echo $priceFormat;
                                 ?>
                             </p>
                         </div>
@@ -568,7 +569,8 @@ require ("db/db.php");
 
                             <p>
                                 <?php
-                                echo $priceResult["wPrice"];
+                                $priceFormat = number_format($priceResult["wPrice"], 2, ',', '.');
+                                echo $priceFormat;
                                 ?>
                             </p>
                         </div>

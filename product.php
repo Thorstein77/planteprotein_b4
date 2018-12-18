@@ -65,7 +65,8 @@ $priceData = mysqli_fetch_assoc($pResult);
 
         <p id="productPagePrice">
             <?php
-            echo $priceData['wPrice'];
+            $priceFormat = number_format($priceData["wPrice"], 2, ',', '.');
+            echo $priceFormat;
             ?>
         </p>
 
@@ -108,6 +109,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                     <?php
                     $wI = 1;
                     while ($wData = mysqli_fetch_assoc($wResult)){
+                        $priceFormat2 = number_format($wData['wPrice'], 2, ',', '.');
                         ?>
                         <li>
                             <input type="radio" name="weight"
@@ -116,7 +118,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                                        echo "checked='checked'";
                                    }
                                    ?>
-                                   value="<?php echo $wData['wPrice'] ?>">
+                                   value="<?php echo $priceFormat2 ?>">
                             <?php echo $wData['wAmount'] ?>
                         </li>
                         <?php
