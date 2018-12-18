@@ -5,38 +5,28 @@
 
 <!-- I <head> har man opsætning - alt det som man ikke ser som selve indholdet -->
 <head>
+    <?php
+    require ("php/head.php");
+    require ("db/db.php");
 
-    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
-    <meta charset="utf-8">
+    // Denne side er sat op af Casper
+    // PHP kode på denne side er efterfølgende skrevet af Kristian
+
+    $pId = mysqli_real_escape_string($db, $_GET["pid"]);
+    $result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
+    $pData = mysqli_fetch_assoc($result);
+
+    ?>
 
     <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Sigende titel</title>
+    <title>
+        <?php
+        echo $pData['pBrand']." ".$pData['pName']." - ";
+        ?>
+        plante-protein.dk
+    </title>
 
-    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
-    <meta name="robots" content="All">
-    <meta name="author" content="Udgiver">
-    <meta name="copyright" content="Information om copyright">
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <!-- Titel, description og keywords skal være forskellige på alle undersider -->
-
-    <meta property="og:title" content="titel">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://www.domain.dk">
-    <meta property="og:image" content="https://www.domain.dk/img.jpg">
-    <meta property="og:description" content="Beskrivelse">
-    <meta property="og:locale" content="da_DK">
-
-
-    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-
-    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-
+    <link rel="canonical" href="http://plante-protein.dk/product.php?pid=<?php echo $pData['pId']; ?>">
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
@@ -44,11 +34,6 @@
 
 <?php
 require ("php/header.php");
-require ("db/db.php");
-
-$pId = mysqli_real_escape_string($db, $_GET["pid"]);
-$result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
-$pData = mysqli_fetch_assoc($result);
 
 $result = mysqli_query($db, "SELECT * FROM images WHERE iPId = '$pId'");
 $img = mysqli_fetch_assoc($result);
@@ -72,7 +57,7 @@ $priceData = mysqli_fetch_assoc($pResult);
 
 
     <div class="productPic">
-        <img src="<?php echo $img['iLink']; ?>">
+        <img src="<?php echo $img['iLink']; ?>" alt="<?php echo $img['iAlt'] ?>">
     </div>
 
 
@@ -160,7 +145,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                 ?>
             </p>
             <br><br>
-            <img src="<?php echo $pData['pContent'] ?>">
+            <img src="<?php echo $pData['pContent'] ?>" alt="produkt næringsværdi">
 
         </div>
 
@@ -169,7 +154,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pGluten"] == 'Yes'){
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/gluten.png">
+                    <img src="images/icons/gluten.png" alt="Gluten fri">
                 </div>
                 <?php
             }
@@ -177,7 +162,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pSoy"] == 'Yes'){
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/soy.png">
+                    <img src="images/icons/soy.png" alt="Soya fri">
                 </div>
                 <?php
             }
@@ -185,7 +170,7 @@ $priceData = mysqli_fetch_assoc($pResult);
             if($pData["pLactose"] == 'Yes') {
                 ?>
                 <div class="iconImg">
-                    <img src="images/icons/lactose.png">
+                    <img src="images/icons/lactose.png" alt="Lactose fri">
                 </div>
                 <?php
             }
@@ -194,7 +179,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                 ?>
 
                 <div class="iconImg">
-                    <img src="images/icons/organic.png">
+                    <img src="images/icons/organic.png" alt="Økologisk">
                 </div>
                 <?php
             }

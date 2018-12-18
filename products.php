@@ -8,7 +8,8 @@
     <?php
     require ("php/head.php");
     ?>
-<title>Sigende titel</title>
+<title>Proteinpulver og proteinbar - plante-protein.dk</title>
+<link rel="canonical" href="http://plante-protein.dk/products.php">
 </head>
 
 <!-- i <body> har man alt indhold på siden -->
@@ -17,6 +18,9 @@
 <?php
 require ("php/header.php");
 require ("db/db.php");
+
+// Denne side er kodet og programmeret af Kristian
+
 ?>
 
 <main class="products">
@@ -72,7 +76,7 @@ require ("db/db.php");
                             Chokolade
                         </li>
                         <li>
-                            <input type="checkbox" value="neut" name="taste[]">
+                            <input type="checkbox" value="nat" name="taste[]">
                             Neutral
                         </li>
                         <li>
@@ -358,7 +362,7 @@ require ("db/db.php");
                                 if($row["pGluten"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/gluten.png">
+                                        <img src="images/icons/gluten.png" alt="Gluten fri">
                                     </div>
                                     <?php
                                 }
@@ -366,7 +370,7 @@ require ("db/db.php");
                                 if($row["pSoy"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/soy.png">
+                                        <img src="images/icons/soy.png" alt="Soya fri">
                                     </div>
                                     <?php
                                 }
@@ -374,7 +378,7 @@ require ("db/db.php");
                                 if($row["pLactose"] == 'Yes') {
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/lactose.png">
+                                        <img src="images/icons/lactose.png" alt="Lactose fri">
                                     </div>
                                     <?php
                                 }
@@ -383,7 +387,7 @@ require ("db/db.php");
                                     ?>
 
                                     <div class="iconImg">
-                                        <img src="images/icons/organic.png">
+                                        <img src="images/icons/organic.png" alt="Økologisk">
                                     </div>
                                     <?php
                                 }
@@ -495,7 +499,7 @@ require ("db/db.php");
                         ?>
                     </h2>
 
-                    <img src="<?php echo $imgResult['iLink'] ?>" alt="<?php echo $imgResult['iAlt'] ?>">
+                    <img src="<?php echo $imgResult['iLink'] ?>" alt="<?php echo $imgResult['iAlt'] ?>" class="productsImg">
 
                     <div class="info">
 
@@ -530,7 +534,7 @@ require ("db/db.php");
                                 if($row["pGluten"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/gluten.png">
+                                        <img src="images/icons/gluten.png" alt="Gluten fri">
                                     </div>
                                     <?php
                                 }
@@ -538,7 +542,7 @@ require ("db/db.php");
                                 if($row["pSoy"] == 'Yes'){
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/soy.png">
+                                        <img src="images/icons/soy.png" alt="Soya fri">
                                     </div>
                                     <?php
                                 }
@@ -546,7 +550,7 @@ require ("db/db.php");
                                 if($row["pLactose"] == 'Yes') {
                                     ?>
                                     <div class="iconImg">
-                                        <img src="images/icons/lactose.png">
+                                        <img src="images/icons/lactose.png" alt="Lactose fri">
                                     </div>
                                     <?php
                                 }
@@ -555,7 +559,7 @@ require ("db/db.php");
                                     ?>
 
                                     <div class="iconImg">
-                                        <img src="images/icons/organic.png">
+                                        <img src="images/icons/organic.png" alt="Økologisk">
                                     </div>
                                     <?php
                                 }
@@ -626,7 +630,7 @@ require ("php/footer.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script>
 
     $(document).ready(function(){
         var $window = $(window);

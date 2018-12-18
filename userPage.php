@@ -7,37 +7,13 @@
 <head>
 
 <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
-<meta charset="utf-8">
-
-<!-- Titel som ses oppe i browserens tab mv. -->
-<title>Sigende titel</title>
-
-<!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
-<meta name="robots" content="All">
-<meta name="author" content="Udgiver">
-<meta name="copyright" content="Information om copyright">
-<meta name="description" content="Free Web tutorials">
-
-<!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
-
-<!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta property="og:title" content="titel" >
-
-<meta property="og:type" content="website" >
-
-<meta property="og:url" content="http://www.domain.dk" >
-
-<meta property="og:image" content="https://www.domain.dk/img.jpg" >
-
-<meta property="og:description" content="Beskrivelse" >
-
-<meta property="og:locale" content="da_DK" >
-
     <?php
     require ("php/head.php");
     ?>
+
+<!-- Titel som ses oppe i browserens tab mv. -->
+<title>Brugerkonto - plante-protein.dk</title>
+
 
 </head>
 
@@ -45,6 +21,10 @@
 <body>
 
 <?php
+
+// Denne side er sat op af Sarah
+// PHP kode på denne side er efterfølgende skrevet af Kristian
+
 require ("php/header.php");
 ?>
 
@@ -77,14 +57,14 @@ require ("php/header.php");
            E-Mail: jens.jensen@gmail.com <br>
            </p>
        </div>
-    </div
+    </div>
 
         <br><br>
 
 </div>
 
    <button class="myButtonedit">
-      <p>Ret</p>
+      Ret
    </button>
 
 <br><br>
@@ -101,7 +81,7 @@ require ("php/header.php");
     </label>
 
 
-    <br>
+    <br> <br>
 
 <button class="Nyhedsbrev">Tilmeld Dig Nyhedsbrev</button>
 </div>
@@ -112,8 +92,9 @@ require ("php/header.php");
 
         <div class="myOrders">
            <p>
-               Ordrehistorik
+            Ordrehistorik
            </p>
+            <i class="fas fa-caret-down"></i>
         </div>
 
         <div class="myHistory">
@@ -138,7 +119,7 @@ require ("php/header.php");
             </ul>
 
         </div>
-
+<br> <br>
     </div>
 
 </main>
@@ -149,12 +130,13 @@ require ("php/footer.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function(e) {
     // Din kode her
 
     $('.myOrders').click(function () {
         $('.myHistory').toggle("slow")
+
     })
 
 });
