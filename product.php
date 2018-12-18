@@ -9,6 +9,9 @@
     require ("php/head.php");
     require ("db/db.php");
 
+    // Denne side er sat op af Casper
+    // PHP kode på denne side er efterfølgende skrevet af Kristian
+
     $pId = mysqli_real_escape_string($db, $_GET["pid"]);
     $result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
     $pData = mysqli_fetch_assoc($result);

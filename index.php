@@ -19,6 +19,10 @@
 <!-- i <body> har man alt indhold på siden -->
 <body>
 <?php
+
+// Denne side er sat op af Sabine
+// PHP kode på denne side er efterfølgende skrevet af Kristian
+
 require ("php/header.php");
 ?>
 

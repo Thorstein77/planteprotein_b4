@@ -41,6 +41,9 @@
 
 <?php
 require ("php/header.php");
+
+// Denne side er sat op af Casper
+// PHP kode på denne side er efterfølgende skrevet af Kristian
 ?>
 
 <main class="side404">
