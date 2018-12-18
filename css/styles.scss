@@ -1759,7 +1759,7 @@ header {
     max-width: 1920px;
     margin: 0 auto;
     display: grid;
-    grid-template: 100px 100px 2200px / 25% 70%;
+    grid-template: 100px 100px auto / 25% 70%;
     grid-column-gap: 5%;
 
     h1{
@@ -1824,7 +1824,7 @@ header {
       grid-area: 3 / 2 / 4 / 3;
 
       display: grid;
-      grid-template: 1fr 1fr 1fr 85px / 30% 30% 30%;
+      grid-template: auto auto auto 85px / 30% 30% 30%;
       grid-column-gap: 5%;
 
       #paginationGrid{
@@ -1834,7 +1834,7 @@ header {
       .product{
         display: block;
         padding: 0;
-        margin: 0;
+        margin: 0 0 50px 0;
 
 
         h2{
