@@ -18,6 +18,9 @@
 <?php
 require ("php/header.php");
 require ("db/db.php");
+
+// Denne side er kodet og programmeret af Kristian
+
 ?>
 
 <main class="products">

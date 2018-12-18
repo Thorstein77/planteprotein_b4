@@ -12,7 +12,7 @@
     ?>
 
 <!-- Titel som ses oppe i browserens tab mv. -->
-<title>Sigende titel</title>
+<title>Brugerkonto - plante-protein.dk</title>
 
 
 </head>
@@ -21,6 +21,10 @@
 <body>
 
 <?php
+
+// Denne side er sat op af Sarah
+// PHP kode på denne side er efterfølgende skrevet af Kristian
+
 require ("php/header.php");
 ?>
 

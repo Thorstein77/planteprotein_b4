@@ -18,6 +18,10 @@
 <body>
 
 <?php
+
+// Denne side er sat op af Casper
+// PHP kode på denne side er efterfølgende skrevet af Kristian
+
 require ("php/header.php");
 ?>
 
