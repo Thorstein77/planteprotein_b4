@@ -45,7 +45,7 @@ require ("php/header.php");
 
 <main class="side404">
 
-    <img src="images/starkgulerod2-8.png">
+    <img src="images/Gulerod-8.png">
 
     <h1>403 - Du har ikke adgang :(</h1>
 
