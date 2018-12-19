@@ -93,7 +93,7 @@ require ("php/header.php");
     </section>
 
     <section class="newsletter">
-        <h1>Tildmeld nyhedsbrev</h1>
+        <h1>Tilmeld nyhedsbrev</h1>
         <p>Bare rolig du bliver ikke Spammet! vi syntes også selv at det er møgirriterende.</p>
         <form>
             <label for="email"></label>
