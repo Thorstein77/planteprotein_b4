@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
     <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Sigende titel</title>
+    <title>403 - plante-protein.dk</title>
 
     <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
     <meta name="robots" content="All">
@@ -41,11 +41,14 @@
 
 <?php
 require ("php/header.php");
+
+// Denne side er sat op af Casper
+// PHP kode på denne side er efterfølgende skrevet af Kristian
 ?>
 
 <main class="side404">
 
-    <img src="images/starkgulerod2-8.png">
+    <img src="images/Gulerod-8.png">
 
     <h1>403 - Du har ikke adgang :(</h1>
 

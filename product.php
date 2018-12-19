@@ -9,6 +9,9 @@
     require ("php/head.php");
     require ("db/db.php");
 
+    // Denne side er sat op af Casper
+    // PHP kode på denne side er efterfølgende skrevet af Kristian
+
     $pId = mysqli_real_escape_string($db, $_GET["pid"]);
     $result = mysqli_query($db, "SELECT * FROM products WHERE pId = '$pId'");
     $pData = mysqli_fetch_assoc($result);
@@ -62,7 +65,8 @@ $priceData = mysqli_fetch_assoc($pResult);
 
         <p id="productPagePrice">
             <?php
-            echo $priceData['wPrice'];
+            $priceFormat = number_format($priceData["wPrice"], 2, ',', '.');
+            echo $priceFormat;
             ?>
         </p>
 
@@ -105,6 +109,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                     <?php
                     $wI = 1;
                     while ($wData = mysqli_fetch_assoc($wResult)){
+                        $priceFormat2 = number_format($wData['wPrice'], 2, ',', '.');
                         ?>
                         <li>
                             <input type="radio" name="weight"
@@ -113,7 +118,7 @@ $priceData = mysqli_fetch_assoc($pResult);
                                        echo "checked='checked'";
                                    }
                                    ?>
-                                   value="<?php echo $wData['wPrice'] ?>">
+                                   value="<?php echo $priceFormat2 ?>">
                             <?php echo $wData['wAmount'] ?>
                         </li>
                         <?php

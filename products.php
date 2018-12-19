@@ -18,6 +18,9 @@
 <?php
 require ("php/header.php");
 require ("db/db.php");
+
+// Denne side er kodet og programmeret af Kristian
+
 ?>
 
 <main class="products">
@@ -393,7 +396,8 @@ require ("db/db.php");
 
                             <p>
                                 <?php
-                                echo $priceResult["wPrice"];
+                                $priceFormat = number_format($priceResult["wPrice"], 2, ',', '.');
+                                echo $priceFormat;
                                 ?>
                             </p>
                         </div>
@@ -565,7 +569,8 @@ require ("db/db.php");
 
                             <p>
                                 <?php
-                                echo $priceResult["wPrice"];
+                                $priceFormat = number_format($priceResult["wPrice"], 2, ',', '.');
+                                echo $priceFormat;
                                 ?>
                             </p>
                         </div>
