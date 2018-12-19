@@ -91,9 +91,13 @@ require ("php/header.php");
 
     <div class="blogIntro">
         <p>
-            Protein er en af de vigtigste elementer til vores kroppe byggesten og derfor er det ofte stillede spørgsmål om veganere og vegetarer nu også får nok protein, så deres kroppe. <br><br>
+            Protein er et af de vigtigste elementer til vores kroppes
+            byggesten og derfor er det ofte stillede spørgsmål om veganere
+            og vegetarer nu også får nok protein. <br><br>
 
-            Men plantebaseret proteinkilder, optages meget nemmere af vores kroppe på grund af det aktive stof, som hedder aminosyre, der nedpryder proteinen og din krop optager vitiaminerne hurtigerer.
+            Men plantebaseret proteinkilder, optages meget nemmere af vores
+            kroppe på grund af det aktive stof, som hedder aminosyre, der nedpryder
+            proteinen og din krop optager vitiaminerne hurtigerer.
         </p>
     </div>
 
@@ -108,7 +112,8 @@ require ("php/header.php");
     </div>
     <div class="blogTxt1">
         <p>
-            Er en blå/grøn alge og er den nye rockstjerne indenfor superfood verden. Smagen er dog lige en anden sag og noget man lige skal vænne sig til. <br><br>
+            Er en blå/grøn alge og er den nye rockstjerne indenfor superfood verden.
+            Smagen er dog lige en anden sag og er noget man lige skal vænne sig til. <br><br>
 
             Vi anbefaler at bruge Spirulina i din smoothie med citrus og/eller ananas eller i en lækker vitaminfyldt grøn juice. <br><br>
 
@@ -132,9 +137,12 @@ require ("php/header.php");
         <img src="images/Aert_cropped.png">
     </div>
     <div class="blogTxt2">
-        Ud over at indeholde en lav mængde fedt og kcal. er grønne ærter smækfyldt med protein og er derfor en ideel udskiftning fra mælkeprotein og æggehvider. <br> <br>
-        Ærter kan om sommeren spises rå som snacks, i salater, koges til supper eller laves til pesto, ja mulighederne er mange. <br> <br>
-        Om vinteren kan det være en udfordring at få fat i den ægte vare. Således anbefaler vi at du i de kolde tider forkæler dig med en sund smoothie lavet på ærteprotein, kan købes her:
+        Ud over at indeholde en lav mængde fedt og kcal. er grønne ærter smækfyldt med protein
+        og er derfor en ideel udskiftning fra mælkeprotein og æggehvider. <br> <br>
+        Ærter kan om sommeren spises rå som snacks, i salater, koges til supper
+        eller laves til pesto, ja mulighederne er mange. <br> <br>
+        Om vinteren kan det være en udfordring at få fat i den ægte vare.
+        Således anbefaler vi at du i de kolde tider forkæler dig med en sund smoothie lavet på ærteprotein, kan købes her:
         <a href="https://plante-protein.dk/protein-pulver/27-scitec-nutrition-100-plant-protein.html" target="_blank">planteprotein.dk</a>
         <br> <br>
         Indeholder 75 g protein pr. 100 g pulver produkt.
@@ -152,7 +160,7 @@ require ("php/header.php");
         <img src="images/rodelinser.jpg">
     </div>
     <div class="blogTxt3">
-        Linser er så fantastiske til en vegetarisk middag. Alt fra millionbøf til veganske hakkebøffer/bruger og mættende element i salater.<br><br>
+        Linser er så fantastiske til en vegetarisk middag. Alt fra millionbøf til veganske hakkebøffer/burgere og som mættende element i salater.<br><br>
 
         Linser er spækket med fiber, jern og ikke mindst protein og lette for maven at fordøje.<br><br>
 
@@ -171,9 +179,11 @@ require ("php/header.php");
         <img src="images/kikrternye.jpg">
     </div>
     <div class="blogTxt4">
-        Vi elsker hummus! det er uden tvivl veganernes bedste ven.<br> <br>
+        Vi elsker hummus! Det er uden tvivl veganernes bedste ven.<br> <br>
 
-        Kikærterne kan ristes på panden, laves til frikadeller, laves til humus eller en dejlig dyp til alle slags grøntsager, samt anvendes til forskellige dressinger i forskellige retter og kan bruges til at booste din gryderet eller suppe.<br><br>
+        Kikærterne kan ristes på panden, laves til frikadeller, laves til humus
+        eller en dejlig dyp til alle slags grøntsager, samt anvendes til forskellige
+        dressinger i forskellige retter og kan bruges til at booste din gryderet eller suppe.<br><br>
 
         Indeholder 19 g protein pr. 100 g kikærter. <br><br>
 
@@ -188,10 +198,16 @@ require ("php/header.php");
         <img src="images/Grflager21.jpg">
     </div>
     <div class="blogTxt5">
-        Hvis du ikke allerede kender til fænomenet er det på tide. Er du lige som de fleste vilde med pasta retter, så er dette et fantastisk supplement til at drysse ovenpå, da flagerne har en oste agtig smag.<br> <br>
+        Hvis du ikke allerede kender til fænomenet er det på tide.
+        Er du lige som de fleste vilde med pasta retter,
+        så er dette et fantastisk supplement til at drysse ovenpå,
+        da flagerne har en oste agtig smag.<br> <br>
 
 
-        Flagerne har en positiv virkning på rigtig mange ting, men især på kolesterol. Er du interesseret i gærflager kan de købes her: <a href="https://www.helsebixen.dk/shop/lasagnette-o.html?gclid=Cj0KCQiArqPgBRCRARIsAPwlHoXnMv64-LoZrt0zy8pbChJe1-H7mrR3u9eMEirTni2y4V4BLBr0OPEaAm_uEALw_wcB" target="_blank">Helsebiksen.dk</a>
+        Flagerne har en positiv virkning på rigtig mange ting, men især på kolesterol.
+        Er du interesseret i gærflager kan de købes
+        her: <a href="https://www.helsebixen.dk/shop/lasagnette-o.html?gclid=Cj0KCQiArqPgBRCRARIsAPwlHoXnMv64-LoZrt0zy8pbChJe1-H7mrR3u9eMEirTni2y4V4BLBr0OPEaAm_uEALw_wcB"
+                target="_blank">Helsebiksen.dk</a>
 
         <br> <br>
 

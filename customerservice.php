@@ -32,7 +32,7 @@ require ("php/header.php");
     <div class="kundeserviceTekst1">
 
         <p>Stil os et spørgsmål. Hos Plante-proteiner.dk er vi altid
-        klar til at hjælpe vores kunder, uanset hvad du spørg om.</p>
+        klar til at hjælpe vores kunder, uanset hvad du spørger om.</p>
 
     </div>
 
@@ -67,7 +67,7 @@ require ("php/header.php");
 
         <form method="post" action="customerservice.php">
 
-            <input type="text" name="e-mail" id="e-mail" placeholder="Indtas e-mail" value="">
+            <input type="text" name="e-mail" id="e-mail" placeholder="Indtast e-mail" value="">
 
         </form>
 
