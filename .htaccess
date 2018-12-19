@@ -1,2 +1,2 @@
-ErrorDocument 403 plante-protein/403.php
-ErrorDocument 404 plante-protein/404.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
