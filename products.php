@@ -153,19 +153,6 @@ require ("db/db.php");
     <section class="productsSection mobPagination">
         <?php
 
-        if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
-            $pagenum = mysqli_real_escape_string($db, $_GET['pagenum']);
-        }else{
-            $pagenum = 1;
-        }
-
-        // hvor mange produkter vi vil se per side
-        $totalProductsPerPage = 3;
-        // beregner hvor mange produkter der skal 'springes over'
-        $offset = ($pagenum - 1) * $totalProductsPerPage;
-        $prevPage = ($pagenum -1);
-        $nextPage = ($pagenum + 1);
-
         if(isset($_GET["submit"])){
             if(isset($_GET['brand'])){
                 $brand = $_GET['brand'];
@@ -295,6 +282,19 @@ require ("db/db.php");
         }
 
         $filterPage = $brandPage.$typePage.$tastePage."&submit=";
+
+        if(isset($_GET['pagenum']) && $_GET['pagenum'] != ""){
+            $pagenum = mysqli_real_escape_string($db, $_GET['pagenum']);
+        }else{
+            $pagenum = 1;
+        }
+
+        // hvor mange produkter vi vil se per side
+        $totalProductsPerPage = 3;
+        // beregner hvor mange produkter der skal 'springes over'
+        $offset = ($pagenum - 1) * $totalProductsPerPage;
+        $prevPage = ($pagenum -1);
+        $nextPage = ($pagenum + 1);
 
         $resultCount = mysqli_query($db, "SELECT COUNT(*) AS 'totalProducts' FROM products $filterFinal");
         $totalProducts = mysqli_fetch_array($resultCount);
