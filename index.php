@@ -93,7 +93,7 @@ require ("php/header.php");
     </section>
 
     <section class="newsletter">
-        <h1>Tildmeld nyhedsbrev</h1>
+        <h1>Tilmeld nyhedsbrev</h1>
         <p>Bare rolig du bliver ikke Spammet! vi syntes også selv at det er møgirriterende.</p>
         <form>
             <label for="email"></label>
@@ -108,16 +108,21 @@ require ("php/header.php");
             <div class="aboutTxt">
                 <p>
                     Vores værdier er helt klare:<br>
-                    Da jeg stiftede plante-protein.dk var det med det formål at  gøre det muligt for den danske forbruger at få fat i plantebaseret proteinpulver, nemt, hurtigt og til en overkommelig pris.<br><br>
-                    Inden Da skulle kunderne selv importerer produkter fra udlandet og risikerer enormt høje skatter og told, samt en alt for lang leveringstid.<br><br>
-                    Men alt det besvær er ovre nu, vi levere fra dag til dag og du kan til enhver tid indenfor 30 dage få dine penge refunderet.<br><br>
+                    Da jeg stiftede plante-protein.dk var det med det formål at
+                    gøre det muligt for den danske forbruger at få fat i plantebaseret
+                    proteinpulver, nemt, hurtigt og til en overkommelig pris.<br><br>
+                    Inden da skulle kunderne selv importerer produkter fra udlandet og
+                    risikerer enormt høje skatter og told, samt en alt for lang leveringstid.<br><br>
+                    Men alt det besvær er ovre nu, vi levere fra dag til dag og du kan
+                    til enhver tid indenfor 30 dage få dine penge refunderet.<br><br>
                     Ud over fordelene ved at handle hos os, får du oven i købet et yderst velsmagende proteinkilde.
                 </p>
             </div>
             <div class="imgBox">
                 <img src="images/aboutIMG.jpg" alt="Stifter, Ivan Riener"><!--Placeholder stockfoto for ikke at krænke kundens privatliv. Ville blive udskiftet med foto af ham hvis opgaven skulle bruges af firmaet i virkeligheden.-->
                 <div class="quote">
-                    <p>“Vores mål er at skabe en samling produkter som vil falde i de flestes smag, på højde med traditionelle tilskud eller bedre. ”</p>
+                    <p>“Vores mål er at skabe en samling produkter som vil falde i de flestes smag,
+                        på højde med traditionelle tilskud eller bedre. ”</p>
                 </div>
         </div>
         </div>
