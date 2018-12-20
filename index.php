@@ -95,6 +95,12 @@ require ("php/header.php");
     <section class="newsletter">
         <h1>Tilmeld nyhedsbrev</h1>
         <p>Bare rolig du bliver ikke Spammet! vi syntes også selv at det er møgirriterende.</p>
+        <p style="max-width: 600px; margin: 30px auto 0 auto;">
+            Synes du at veganske opskrifter er toppen, men eventuelt mangler inspiration til hvordan du får mere proteinrig kost hverdagen, sammensætter en sund og fiberrig kost plan eller er du bare fan af vores velsmagende produkter og ønsker at blive informeret om tilbud og nye varianter.
+        </p>
+        <p>
+            Så kan du rolig tilmelde dig, vi har også andet at lave end at sende mails ud.
+        </p>
         <form>
             <label for="email"></label>
             <input type="text" name="email" id="email" placeholder="Indtast e-mail"><br>
